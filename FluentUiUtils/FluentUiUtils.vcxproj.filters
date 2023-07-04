@@ -32,12 +32,12 @@
     <ClInclude Include="FluentUiUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FluentIconUtils.h">
+    <ClInclude Include="FluentUiIconUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FluentIconUtils.cpp">
+    <ClCompile Include="FluentUiIconUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

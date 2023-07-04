@@ -86,10 +86,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="FluentIconUtils.h" />
+    <ClInclude Include="FluentUiIconUtils.h" />
     <ClInclude Include="FluentUiUtilsGlobal.h" />
     <ClInclude Include="FluentUiUtils.h" />
-    <ClCompile Include="FluentIconUtils.cpp" />
+    <ClCompile Include="FluentUiIconUtils.cpp" />
     <ClCompile Include="FluentUiUtils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QWidget>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QPushButton>
 #include "FluentUiControlGlobal.h"
 
 class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public QWidget
@@ -15,6 +18,13 @@ protected:
 	void mousePressEvent(QMouseEvent* event) override;
 	void mouseReleaseEvent(QMouseEvent* event) override;
 private:
+	QHBoxLayout* m_hLayout;
+	QVBoxLayout* m_vLayout;
+
+	QPushButton* m_minBtn;
+	QPushButton* m_closeBtn;
+	QPushButton* m_maxNorBtn;
+
 	QPoint m_mouseLeftBtnPressPoint;
 	bool m_bMouseLeftBtnPress;
 };
