@@ -23,47 +23,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FluentUiControlGlobal.h">
+    <ClInclude Include="FluentUiUtilsGlobal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClCompile Include="FluentUiControl.cpp">
+    <ClCompile Include="FluentUiUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClInclude Include="FluentUiControl.h">
+    <ClInclude Include="FluentUiUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="Label.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="FrameLessWidget.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="FluWidget.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="FluFrameLessWidget.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="FluLabel.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="FluWidget.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="FluFrameLessWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FluLabel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FluWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
