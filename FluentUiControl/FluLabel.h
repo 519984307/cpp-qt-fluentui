@@ -1,9 +1,9 @@
 #pragma once
 
 #include <QWidget>
-#include "ui_Label.h"
+#include "FluentUiControlGlobal.h"
 
-class FluLabel : public QWidget, public Ui::LabelClass
+class FLUENTUICONTROL_EXPORT FluLabel : public QWidget
 {
 	Q_OBJECT
 

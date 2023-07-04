@@ -1,9 +1,9 @@
 #pragma once
 
 #include <QWidget>
-#include "ui_FluWidget.h"
+#include "FluentUiControlGlobal.h"
 
-class FluWidget : public QWidget, public Ui::FluWidgetClass
+class FLUENTUICONTROL_EXPORT FluWidget : public QWidget
 {
 	Q_OBJECT
 
