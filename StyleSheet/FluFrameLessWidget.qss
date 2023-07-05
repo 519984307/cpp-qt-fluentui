@@ -1,0 +1,19 @@
+FluFrameLessWidget {
+    background: rgba(255, 255, 255);
+}
+
+QPushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 0px;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+QPushButton:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#FluCloseBtn:hover {
+    background: rgba(255, 0, 0, 0.8);
+}

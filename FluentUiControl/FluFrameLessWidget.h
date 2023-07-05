@@ -17,6 +17,12 @@ protected:
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void mousePressEvent(QMouseEvent* event) override;
 	void mouseReleaseEvent(QMouseEvent* event) override;
+
+	void resizeEvent(QResizeEvent* event) override;
+public slots:
+	void slotClickMinBtn();
+	void slotClickCloseBtn();
+	void slotClickMaxNorBtn();
 private:
 	QHBoxLayout* m_hLayout;
 	QVBoxLayout* m_vLayout;
