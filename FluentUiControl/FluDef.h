@@ -2,9 +2,8 @@
 
 #define FluSetObjectName(objectName) setObjectName(#objectName);
 #define FluSetStyleSheet(objectName) setStyleSheet("../StyleSheet/"#objectName".qss");
-#define FluSetProperty(objectName) \
-	FluSetObjectName(objectName); \
-	FluSetStyleSheet(objectName);
+#define FluSetProperty(objectName)	FluSetObjectName(objectName);	\
+									FluSetStyleSheet(objectName);
 
 
 enum class FluAwesomeType {

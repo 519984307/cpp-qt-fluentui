@@ -49,7 +49,7 @@ FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
 	
 	//m_vLayout->addStretch(1);
 
-	setMinimumSize(800, 600);
+	setMinimumSize(1000, 640);
 
 	connect(m_minBtn, SIGNAL(clicked()), this, SLOT(slotClickMinBtn()));
 	connect(m_maxNorBtn, SIGNAL(clicked()), this, SLOT(slotClickMaxNorBtn()));
