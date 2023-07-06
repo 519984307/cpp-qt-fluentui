@@ -1,6 +1,6 @@
 #include "FluMainWidget.h"
 #include "FluLabel.h"
-
+#include "FluLinkCardWidget.h"
 
 FluMainWidget::FluMainWidget(QWidget* parent /*= nullptr*/, QWidget* centerWidget /*= nullptr*/) 
 	: FluFrameLessWidget(parent, centerWidget)
@@ -25,6 +25,13 @@ FluMainWidget::FluMainWidget(QWidget* parent /*= nullptr*/, QWidget* centerWidge
 	FluLabel* m_titleLable = new FluLabel(m_rightTopWidget);
 	m_titleLable->setText("FluentUI Gallery");
 	m_titleLable->setStyleSheet(" font: 30px 'Segoe UI', 'Microsoft YaHei';");
+
+	FluLinkCardWidget* linkCardWidget = new FluLinkCardWidget(m_rightTopWidget, 
+		QPixmap("../res/ic_home_github.png"), "FluentUI GitHub", 
+		"The latest FluentUI controls and styles for your applications.",
+		"https://github.com/mowangshuying/CppQtFluentUI");
+
+	linkCardWidget->move(20, 80);
 
 	m_rightVLayout->addWidget(m_rightTopWidget);
 	m_rightTopWidget->setBackgrondImg(QPixmap("../res/bg_home_header.png"));

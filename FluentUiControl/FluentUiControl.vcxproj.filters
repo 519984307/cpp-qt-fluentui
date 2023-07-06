@@ -38,6 +38,12 @@
     <ClInclude Include="FluDef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluImgWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluLinkCardWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluFrameLessWidget.h">
@@ -61,6 +67,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluMainWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluImgWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluLinkCardWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
