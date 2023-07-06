@@ -9,10 +9,29 @@
 class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public QWidget
 {
 	Q_OBJECT
-
+public:
+	enum class BorderArea
+	{
+		BorderAreaNone = 0,
+		BorderAreaTop,
+		BorderAreaBottom,
+		BorderAreaLeft,
+		BorderAreaRight,
+		BorderAreaTopLeft,
+		BorderAreaTopRight,
+		BorderAreaBottomLeft,
+		BorderAreaBottomRight,
+	};
 public:
 	FluFrameLessWidget(QWidget *parent = nullptr);
 	virtual ~FluFrameLessWidget();
+
+	void UpdateBorderArea(QPoint pos);
+	void UpdateCursor();
+	void UpdateWindowByBorderArea();
+
+	void adjustWndSizeByMouseMove(QMouseEvent* event);
+
 protected:
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void mousePressEvent(QMouseEvent* event) override;
@@ -32,5 +51,6 @@ private:
 	QPushButton* m_maxNorBtn;
 
 	QPoint m_mouseLeftBtnPressPoint;
+	BorderArea m_borderArea;
 	bool m_bMouseLeftBtnPress;
 };
