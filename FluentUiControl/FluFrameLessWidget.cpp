@@ -3,9 +3,16 @@
 #include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
 #include <QMouseEvent>
 
-FluFrameLessWidget::FluFrameLessWidget(QWidget *parent)
-	: QWidget(parent)
+FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
+	: FluWidget(parent)
 {
+
+	m_borderArea = BorderArea::BorderAreaNone;
+	if (centerWidget == nullptr)
+	{
+		m_centerWidget = new QWidget(this);
+	}
+
 	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint);
 	m_bMouseLeftBtnPress = false;
 	m_mouseLeftBtnPressPoint = QPoint(0, 0);
@@ -36,7 +43,11 @@ FluFrameLessWidget::FluFrameLessWidget(QWidget *parent)
 	m_hLayout->addWidget(m_closeBtn);
 
 	m_vLayout->addLayout(m_hLayout, 0);
-	m_vLayout->addStretch(1);
+
+	m_centerWidget->setParent(this);
+	m_vLayout->addWidget(m_centerWidget, 1);
+	
+	//m_vLayout->addStretch(1);
 
 	setMinimumSize(800, 600);
 
@@ -51,6 +62,7 @@ FluFrameLessWidget::FluFrameLessWidget(QWidget *parent)
 	setStyleSheet(styleSheet);
 	setMouseTracking(true);
 	m_closeBtn->setMouseTracking(true);
+	m_centerWidget->setMouseTracking(true);
 }
 
 FluFrameLessWidget::~FluFrameLessWidget()

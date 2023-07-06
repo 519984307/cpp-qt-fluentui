@@ -4,9 +4,10 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include "FluWidget.h"
 #include "FluentUiControlGlobal.h"
 
-class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public QWidget
+class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public FluWidget
 {
 	Q_OBJECT
 public:
@@ -23,7 +24,7 @@ public:
 		BorderAreaBottomRight,
 	};
 public:
-	FluFrameLessWidget(QWidget *parent = nullptr);
+	FluFrameLessWidget(QWidget *parent = nullptr, QWidget* centerWidget = nullptr);
 	virtual ~FluFrameLessWidget();
 
 	void UpdateBorderArea(QPoint pos);
@@ -46,6 +47,7 @@ private:
 	QHBoxLayout* m_hLayout;
 	QVBoxLayout* m_vLayout;
 
+	QWidget* m_centerWidget;
 	QPushButton* m_minBtn;
 	QPushButton* m_closeBtn;
 	QPushButton* m_maxNorBtn;
