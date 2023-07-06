@@ -32,6 +32,12 @@
     <ClInclude Include="FluentUiControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluMainWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluFrameLessWidget.h">
@@ -54,9 +60,8 @@
     <ClCompile Include="FluWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
+    <ClCompile Include="FluMainWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

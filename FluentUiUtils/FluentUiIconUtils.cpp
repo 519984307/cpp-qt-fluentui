@@ -1,3 +1,4 @@
+#include "../FluentUiControl/FluDef.h"
 #include "FluentUiIconUtils.h"
 #include <QFontDatabase>
 #include <QPainter>
@@ -20,7 +21,7 @@ FluentUiIconUtils* FluentUiIconUtils::getInstance()
 	return &utils;
 }
 
-QPixmap FluentUiIconUtils::GetFluentIcon(int nIndex)
+QPixmap FluentUiIconUtils::GetFluentIcon(FluAwesomeType nType)
 {
 	QFont tmpFont = getInstance()->m_fluentFont;
 
@@ -33,7 +34,7 @@ QPixmap FluentUiIconUtils::GetFluentIcon(int nIndex)
 	painter.setBrush(QColor("black"));
 	tmpFont.setPointSize(15);
 	painter.setFont(tmpFont);
-	painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar(nIndex));
+	painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar((int)nType));
 	painter.end();
 
 	return tmpPixMap;

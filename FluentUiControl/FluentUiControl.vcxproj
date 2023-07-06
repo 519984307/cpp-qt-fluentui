@@ -88,17 +88,16 @@
   <ItemGroup>
     <ClCompile Include="FluFrameLessWidget.cpp" />
     <ClCompile Include="FluLabel.cpp" />
+    <ClCompile Include="FluMainWidget.cpp" />
     <ClCompile Include="FluWidget.cpp" />
+    <ClInclude Include="FluDef.h" />
     <ClInclude Include="FluentUiControlGlobal.h" />
     <ClInclude Include="FluentUiControl.h" />
     <ClCompile Include="FluentUiControl.cpp" />
+    <ClInclude Include="FluMainWidget.h" />
     <QtMoc Include="FluWidget.h" />
     <QtMoc Include="FluLabel.h" />
     <QtMoc Include="FluFrameLessWidget.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

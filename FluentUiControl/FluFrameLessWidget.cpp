@@ -1,3 +1,4 @@
+#include "FluDef.h"
 #include "FluFrameLessWidget.h"
 #include "../FluentUiUtils/FluentUiIconUtils.h"
 #include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
@@ -6,7 +7,6 @@
 FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
 	: FluWidget(parent)
 {
-
 	m_borderArea = BorderArea::BorderAreaNone;
 	if (centerWidget == nullptr)
 	{
@@ -29,17 +29,17 @@ FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
 	m_minBtn = new QPushButton(this);
 	m_minBtn->setFixedSize(30, 30);
 	//m_minBtn->setIconSize(QSize(30, 30));
-	m_minBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon((int)FluentUiIconUtils::AwesomeType::ChromeMinimize)));
+	m_minBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeMinimize)));
 	m_hLayout->addWidget(m_minBtn);
 
 	m_maxNorBtn = new QPushButton(this);
 	m_maxNorBtn->setFixedSize(30, 30);
-	m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon((int)FluentUiIconUtils::AwesomeType::ChromeMaximize)));
+	m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeMaximize)));
 	m_hLayout->addWidget(m_maxNorBtn);
 
 	m_closeBtn = new QPushButton(this);
 	m_closeBtn->setFixedSize(30, 30);
-	m_closeBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon((int)FluentUiIconUtils::AwesomeType::ChromeClose)));
+	m_closeBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeClose)));
 	m_hLayout->addWidget(m_closeBtn);
 
 	m_vLayout->addLayout(m_hLayout, 0);
@@ -348,20 +348,21 @@ void FluFrameLessWidget::resizeEvent(QResizeEvent* event)
 void FluFrameLessWidget::slotClickMinBtn()
 {
 	showMinimized();
+	m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }
 
 void FluFrameLessWidget::slotClickCloseBtn()
 {
 	close();
+	m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }
 
 void FluFrameLessWidget::slotClickMaxNorBtn()
 {
 	if (isMaximized())
 	{
-		m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon((int)FluentUiIconUtils::AwesomeType::ChromeMaximize)));
+		m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeMaximize)));
 		showNormal();
-		return;
 	}
 	else if(isMinimized())
 	{
@@ -369,8 +370,8 @@ void FluFrameLessWidget::slotClickMaxNorBtn()
 	}
 	else
 	{
-		m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon((int)FluentUiIconUtils::AwesomeType::ChromeRestore)));
+		m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeRestore)));
 		showMaximized();
-		return;
 	}
+	m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }

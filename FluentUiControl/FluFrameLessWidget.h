@@ -33,6 +33,11 @@ public:
 
 	void adjustWndSizeByMouseMove(QMouseEvent* event);
 
+	QWidget* getCenterWidget()
+	{
+		return m_centerWidget;
+	}
+
 protected:
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void mousePressEvent(QMouseEvent* event) override;
@@ -43,7 +48,8 @@ public slots:
 	void slotClickMinBtn();
 	void slotClickCloseBtn();
 	void slotClickMaxNorBtn();
-private:
+
+protected:
 	QHBoxLayout* m_hLayout;
 	QVBoxLayout* m_vLayout;
 

@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QWidget>
-#include "../FluentUiControl/FluFrameLessWidget.h"
+#include "../FluentUiControl/FluMainWidget.h"
 
 int main(int argc, char** argv)
 {
@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 	//QWidget w;
 	//w.show();
 
-	FluFrameLessWidget w;
+	FluMainWidget w;
 	w.show();
 
 	
