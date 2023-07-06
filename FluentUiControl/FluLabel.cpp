@@ -2,9 +2,9 @@
 #include "FluLabel.h"
 
 FluLabel::FluLabel(QWidget *parent)
-	: QWidget(parent)
+	: QLabel(parent)
 {
-	FluSetObjectName(FluLabel);
+	FluSetProperty(FluLabel);
 }
 
 FluLabel::~FluLabel()

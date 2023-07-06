@@ -1,6 +1,11 @@
 #pragma once
 
 #define FluSetObjectName(objectName) setObjectName(#objectName);
+#define FluSetStyleSheet(objectName) setStyleSheet("../StyleSheet/"#objectName".qss");
+#define FluSetProperty(objectName) \
+	FluSetObjectName(objectName); \
+	FluSetStyleSheet(objectName);
+
 
 enum class FluAwesomeType {
 	GlobalNavButton = 0xe700,

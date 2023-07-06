@@ -348,13 +348,15 @@ void FluFrameLessWidget::resizeEvent(QResizeEvent* event)
 void FluFrameLessWidget::slotClickMinBtn()
 {
 	showMinimized();
-	m_mouseLeftBtnPressPoint = QPoint(0, 0);
+	//m_borderArea = BorderArea::BorderAreaNone;
+	//m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }
 
 void FluFrameLessWidget::slotClickCloseBtn()
 {
 	close();
-	m_mouseLeftBtnPressPoint = QPoint(0, 0);
+	//m_borderArea = BorderArea::BorderAreaNone;
+	//m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }
 
 void FluFrameLessWidget::slotClickMaxNorBtn()
@@ -373,5 +375,6 @@ void FluFrameLessWidget::slotClickMaxNorBtn()
 		m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeRestore)));
 		showMaximized();
 	}
-	m_mouseLeftBtnPressPoint = QPoint(0, 0);
+	//m_borderArea = BorderArea::BorderAreaNone;
+	//m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }

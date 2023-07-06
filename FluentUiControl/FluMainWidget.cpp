@@ -1,4 +1,5 @@
 #include "FluMainWidget.h"
+#include "FluLabel.h"
 
 
 FluMainWidget::FluMainWidget(QWidget* parent /*= nullptr*/, QWidget* centerWidget /*= nullptr*/) 
@@ -19,7 +20,12 @@ FluMainWidget::FluMainWidget(QWidget* parent /*= nullptr*/, QWidget* centerWidge
 
 
 	m_rightTopWidget = new FluWidget(centerWidget);
-	m_rightTopWidget->setStyleSheet("background-color:green;");
+	//m_rightTopWidget->setStyleSheet("background-color:green;");
+
+	FluLabel* m_titleLable = new FluLabel(m_rightTopWidget);
+	m_titleLable->setText("FluentUI Gallery");
+	m_titleLable->setStyleSheet(" font: 30px 'Segoe UI', 'Microsoft YaHei';");
+
 	m_rightVLayout->addWidget(m_rightTopWidget);
 	m_rightTopWidget->setBackgrondImg(QPixmap("../res/bg_home_header.png"));
 	m_rightTopWidget->setFixedHeight(320);
