@@ -4,7 +4,7 @@
 FluLabel::FluLabel(QWidget *parent)
 	: QLabel(parent)
 {
-	FluSetProperty(FluLabel);
+	FluSetNameAndStypeSheet(FluLabel);
 }
 
 FluLabel::~FluLabel()
