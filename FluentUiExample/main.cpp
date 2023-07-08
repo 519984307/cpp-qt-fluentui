@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QWidget>
 #include "../FluentUiControl/FluMainWidget.h"
+#include "../FluentUiControl/FluSampleCard.h"
 
 int main(int argc, char** argv)
 {
