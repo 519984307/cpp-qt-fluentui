@@ -7,7 +7,9 @@ FluLinkCardWidget::FluLinkCardWidget(QWidget* parent /*= nullptr*/, QPixmap img 
 	setFixedSize(200, 220);
 	m_url = QUrl(url);
 
-	m_vLayout = new QVBoxLayout(this);
+	m_vLayout = new QVBoxLayout();
+	setLayout(m_vLayout);
+
 	m_iconWidget = new FluImgWidget(this, img);
 	m_titleLabel = new QLabel(this);
 	m_contentLabel = new QLabel(this);

@@ -7,7 +7,7 @@
 #include "FluWidget.h"
 #include "FluentUiControlGlobal.h"
 
-class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public FluWidget
+class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public QWidget
 {
 	Q_OBJECT
 public:

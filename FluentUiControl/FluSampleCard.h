@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QMouseEvent>
 
 class FluSampleCard : public QWidget
 {
@@ -18,17 +19,13 @@ class FluSampleCard : public QWidget
 	FluSetPropertyP(QLabel, contentLabel);
 	FluSetPropertyP(QVBoxLayout, vLayout);
 	FluSetPropertyP(QHBoxLayout, hLayout);
+
+signals:
+	void swithSampleCard(QString m_routeKey,int m_index);
 public:
-	FluSampleCard(QWidget* parent = nullptr, QPixmap img = QPixmap(), QString title = "", QString content = "", QString routeKey = "", int index = -1)
-		: QWidget(parent), m_routeKey(routeKey), m_index(index)
-	{
-		m_imgWidget = new FluImgWidget(this, img);
-		m_titleLabel = new QLabel(title);
-		m_contentLabel = new QLabel(content);
-
-		m_imgWidget->setFixedSize(48, 48);
-		setFixedSize(360, 90);
-	}
-
+	FluSampleCard(QWidget* parent = nullptr, QPixmap img = QPixmap(), QString title = "", QString content = "", QString routeKey = "", int index = -1);
+protected:
+	void mouseReleaseEvent(QMouseEvent* event) override;
+	void paintEvent(QPaintEvent* event) override;
 };
 

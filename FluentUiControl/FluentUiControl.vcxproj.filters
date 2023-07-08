@@ -32,9 +32,6 @@
     <ClInclude Include="FluentUiControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FluMainWidget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FluDef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -61,6 +58,15 @@
     <QtMoc Include="FluSampleCard.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluSampleCardView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluMainWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHomeInterface.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluFrameLessWidget.cpp">
@@ -85,6 +91,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluSampleCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluSampleCardView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluHomeInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

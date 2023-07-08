@@ -88,20 +88,24 @@
   <ItemGroup>
     <ClCompile Include="FluFlowLayout.cpp" />
     <ClCompile Include="FluFrameLessWidget.cpp" />
+    <ClCompile Include="FluHomeInterface.cpp" />
     <ClCompile Include="FluImgWidget.cpp" />
     <ClCompile Include="FluLabel.cpp" />
     <ClCompile Include="FluLinkCardWidget.cpp" />
     <ClCompile Include="FluMainWidget.cpp" />
     <ClCompile Include="FluSampleCard.cpp" />
+    <ClCompile Include="FluSampleCardView.cpp" />
     <ClCompile Include="FluWidget.cpp" />
     <ClInclude Include="FluDef.h" />
     <ClInclude Include="FluentUiControlGlobal.h" />
     <ClInclude Include="FluentUiControl.h" />
     <ClCompile Include="FluentUiControl.cpp" />
     <ClInclude Include="FluFlowLayout.h" />
+    <QtMoc Include="FluHomeInterface.h" />
     <ClInclude Include="FluImgWidget.h" />
     <ClInclude Include="FluLinkCardWidget.h" />
-    <ClInclude Include="FluMainWidget.h" />
+    <QtMoc Include="FluMainWidget.h" />
+    <QtMoc Include="FluSampleCardView.h" />
     <QtMoc Include="FluSampleCard.h" />
     <QtMoc Include="FluWidget.h" />
     <QtMoc Include="FluLabel.h" />

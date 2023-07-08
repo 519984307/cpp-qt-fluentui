@@ -1,15 +1,10 @@
-#pragma once
+#ifndef FLOWLAYOUT_H
+#define FLOWLAYOUT_H
 
 #include <QLayout>
-#include <QWidget>
-#include <QLayoutItem>
-#include <QVector>
+#include <QRect>
 #include <QStyle>
-#include <QPropertyAnimation>
-#include <QParallelAnimationGroup>
-#include <QSize>
-
-// ref: https://doc.qt.io/qt-5/qtwidgets-layouts-flowlayout-example.html
+//! [0]
 class FluFlowLayout : public QLayout
 {
 public:
@@ -34,8 +29,10 @@ private:
 	int doLayout(const QRect& rect, bool testOnly) const;
 	int smartSpacing(QStyle::PixelMetric pm) const;
 
-private:
 	QList<QLayoutItem*> itemList;
 	int m_hSpace;
 	int m_vSpace;
 };
+//! [0]
+
+#endif // FLOWLAYOUT_H

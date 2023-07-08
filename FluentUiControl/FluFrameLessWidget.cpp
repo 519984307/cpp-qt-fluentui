@@ -5,7 +5,7 @@
 #include <QMouseEvent>
 
 FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
-	: FluWidget(parent)
+	: QWidget(parent)
 {
 	m_borderArea = BorderArea::BorderAreaNone;
 	if (centerWidget == nullptr)
