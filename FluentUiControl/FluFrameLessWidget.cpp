@@ -318,7 +318,7 @@ void FluFrameLessWidget::mouseMoveEvent(QMouseEvent* event)
 	}
 	else
 	{
-		adjustWndSizeByMouseMove(event);
+		//adjustWndSizeByMouseMove(event);
 	}
 }
 

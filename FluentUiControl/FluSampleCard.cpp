@@ -2,6 +2,7 @@
 #include <QStyle>
 #include <QPainter>
 #include <QStyleOption>
+#include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
 
 FluSampleCard::FluSampleCard(QWidget* parent /*= nullptr*/, QPixmap img /*= QPixmap()*/, QString title /*= ""*/, QString content /*= ""*/, QString routeKey /*= ""*/, int index /*= -1*/)
 	: QWidget(parent), m_routeKey(routeKey), m_index(index)
@@ -34,10 +35,13 @@ FluSampleCard::FluSampleCard(QWidget* parent /*= nullptr*/, QPixmap img /*= QPix
 	m_vLayout->addWidget(m_contentLabel);
 	m_vLayout->addStretch(1);
 
-	m_titleLabel->setObjectName("FluTitleLabel");
-	m_contentLabel->setObjectName("FluContentLabel");
+	m_titleLabel->setObjectName("titleLabel");
+	m_contentLabel->setObjectName("contentLabel");
 	//FluSetNameAndStypeSheet(FluSampleCard);
-	setStyleSheet("FluSampleCard{border:1px solid black;}");
+	//setStyleSheet("FluSampleCard{border:1px solid black;}");
+
+	//QString qss = FluentUiStyleSheetUitls::getQssByFileName("../StyleSheet/FluSampleCard.qss");
+	//setStyleSheet(qss);
 	
 }
 

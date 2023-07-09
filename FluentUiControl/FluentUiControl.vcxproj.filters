@@ -67,6 +67,12 @@
     <QtMoc Include="FluHomeInterface.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluBannerWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluLinkCardView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluFrameLessWidget.cpp">
@@ -97,6 +103,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluHomeInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluBannerWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluLinkCardView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
