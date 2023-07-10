@@ -78,7 +78,7 @@ QLayoutItem* FluFlowLayout::takeAt(int index)
 //! [6]
 Qt::Orientations FluFlowLayout::expandingDirections() const
 {
-	return 0;
+	return (Qt::Orientation)0;
 }
 //! [6]
 
@@ -114,7 +114,8 @@ QSize FluFlowLayout::minimumSize() const
 	foreach(item, itemList)
 		size = size.expandedTo(item->minimumSize());
 
-	size += QSize(2 * margin(), 2 * margin());
+	QMargins margins  = contentsMargins();
+	size += QSize(margins.left()+margins.right(), margins.top()+margins.bottom());
 	return size;
 }
 //! [8]

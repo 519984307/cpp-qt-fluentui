@@ -31,7 +31,7 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>msvc2017_64</QtInstall>
+    <QtInstall>6.5.1_msvc2019_64</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -98,6 +98,7 @@
     <ClCompile Include="FluSampleCard.cpp" />
     <ClCompile Include="FluSampleCardView.cpp" />
     <ClCompile Include="FluWidget.cpp" />
+    <QtMoc Include="FluSampleCard.h" />
     <QtMoc Include="FluBannerWidget.h" />
     <ClInclude Include="FluDef.h" />
     <ClInclude Include="FluentUiControlGlobal.h" />
@@ -110,7 +111,6 @@
     <QtMoc Include="FluLinkCardWidget.h" />
     <QtMoc Include="FluMainWidget.h" />
     <QtMoc Include="FluSampleCardView.h" />
-    <QtMoc Include="FluSampleCard.h" />
     <QtMoc Include="FluWidget.h" />
     <QtMoc Include="FluLabel.h" />
     <QtMoc Include="FluFrameLessWidget.h" />

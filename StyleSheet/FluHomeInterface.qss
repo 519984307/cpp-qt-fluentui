@@ -11,7 +11,7 @@ FluBannerWidget>#galleryLabel {
     font: 42px 'Segoe UI', 'Microsoft YaHei';
     font-weight: bold;
     background-color: transparent;
-    color: white;
+    color: black;
     padding-left: 28px;
 }
 

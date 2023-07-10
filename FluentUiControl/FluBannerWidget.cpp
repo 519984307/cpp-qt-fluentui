@@ -1,11 +1,13 @@
 #include "FluBannerWidget.h"
 #include <QPainter>
+#include <QPainterPath>
 
 FluBannerWidget::FluBannerWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
 	setFixedHeight(360);
 	m_vLayout = new QVBoxLayout(this);
 	m_galleryLabel = new QLabel("FluentUI Gallery", this);
+//	m_galleryLabel->setStyleSheet("font: 42px 'Segoe UI', 'Microsoft YaHei';font-weight: bold;background-color: transparent;color: black;padding-left: 28px;");
 	m_img = QPixmap("../res/bg_home_header.png");
 
 	m_linkCardView = new FluLinkCardView(this);
@@ -21,8 +23,6 @@ FluBannerWidget::FluBannerWidget(QWidget* parent /*= nullptr*/) : QWidget(parent
 		"FluentUI GitHub",
 		"The latest FluentUI controls and styles for your applications.",
 		"https://github.com/mowangshuying/CppQtFluentUI");
-
-	//setStyleSheet("border:none;");
 }
 
 void FluBannerWidget::paintEvent(QPaintEvent* event)

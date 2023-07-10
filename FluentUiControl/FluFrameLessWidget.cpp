@@ -63,6 +63,7 @@ FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
 	setMouseTracking(true);
 	m_closeBtn->setMouseTracking(true);
 	m_centerWidget->setMouseTracking(true);
+//	setAttribute(Qt::WA_Hover);
 }
 
 FluFrameLessWidget::~FluFrameLessWidget()
@@ -73,7 +74,10 @@ FluFrameLessWidget::~FluFrameLessWidget()
 void FluFrameLessWidget::UpdateBorderArea(QPoint pos)
 {
 	m_borderArea = BorderArea::BorderAreaNone;
-	int offset = 5;
+	if (isMaximized())
+		return;
+
+	int offset =  5;
 
 	int x = pos.x();
 	int y = pos.y();
@@ -192,17 +196,17 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 {
 	if (m_borderArea == BorderArea::BorderAreaRight)
 	{
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 		int wndW = width() + distancePoint.x();
 		setFixedWidth(wndW);
-		m_mouseLeftBtnPressPoint = event->pos();
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 	
 	if (m_borderArea == BorderArea::BorderAreaLeft)
 	{
 		QRect wndRect = rect();
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 
 		int gWndX = pos().x() + wndRect.x() + distancePoint.x();
 		int gWndY = pos().y();
@@ -210,15 +214,14 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int wndH = height();
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedWidth(wndW);
-		m_mouseLeftBtnPressPoint = event->pos();
-		m_mouseLeftBtnPressPoint.setX(m_mouseLeftBtnPressPoint.x() - distancePoint.x());
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 	
 	if (m_borderArea == BorderArea::BorderAreaTop)
 	{
 		QRect wndRect = rect();
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 
 		int gWndX = pos().x();
 		int gWndY = pos().y() + wndRect.y() + distancePoint.y();
@@ -227,24 +230,23 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedHeight(wndH);
-		m_mouseLeftBtnPressPoint = event->pos();
-		m_mouseLeftBtnPressPoint.setY(m_mouseLeftBtnPressPoint.y() - distancePoint.y());
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 	
 	if (m_borderArea == BorderArea::BorderAreaBottom)
 	{
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 		int wndH = height() + distancePoint.y();
 		setFixedHeight(wndH);
-		m_mouseLeftBtnPressPoint = event->pos();
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 	
 	if(m_borderArea == BorderArea::BorderAreaTopLeft)
 	{
 		QRect wndRect = rect();
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 
 		int gWndX = pos().x() + wndRect.x() + distancePoint.x();
 		int gWndY = pos().y() + wndRect.y() + distancePoint.y();
@@ -253,16 +255,14 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->pos();
-		m_mouseLeftBtnPressPoint.setX(m_mouseLeftBtnPressPoint.x() - distancePoint.x());
-		m_mouseLeftBtnPressPoint.setY(m_mouseLeftBtnPressPoint.y() - distancePoint.y());
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 	
 	if (m_borderArea == BorderArea::BorderAreaTopRight)
 	{
 		QRect wndRect = rect();
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 
 		int gWndX = pos().x();
 		int gWndY = pos().y() + wndRect.y() + distancePoint.y();
@@ -271,15 +271,14 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->pos();
-		m_mouseLeftBtnPressPoint.setY(m_mouseLeftBtnPressPoint.y() - distancePoint.y());
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 	
 	if (m_borderArea == BorderArea::BorderAreaBottomLeft)
 	{
 		QRect wndRect = rect();
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 
 		int gWndX = pos().x() + wndRect.x() + distancePoint.x();
 		int gWndY = pos().y();
@@ -287,18 +286,17 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int wndH = height() +distancePoint.y();
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->pos();
-		m_mouseLeftBtnPressPoint.setX(m_mouseLeftBtnPressPoint.x() - distancePoint.x());
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 	
 	if (m_borderArea == BorderArea::BorderAreaBottomRight)
 	{
-		QPoint distancePoint = event->pos() - m_mouseLeftBtnPressPoint;
+		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 		int wndW = width() + distancePoint.x();
 		int wndH = height() + distancePoint.y();
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->pos();
+		m_mouseLeftBtnPressPoint = event->globalPos();
 		return;
 	}
 }
@@ -312,13 +310,20 @@ void FluFrameLessWidget::mouseMoveEvent(QMouseEvent* event)
 		return;
 	}
 
+	//qDebug() << __FUNCTION__ << "border area  = " << (int)m_borderArea;
 	if (m_borderArea == BorderArea::BorderAreaNone)
 	{
-		move(event->pos() - m_mouseLeftBtnPressPoint + pos());
+		if (isMaximized())
+		{
+			return;
+		}
+
+		move(event->globalPos() - m_mouseLeftBtnPressPoint + pos());
+		m_mouseLeftBtnPressPoint = event->globalPos();
 	}
 	else
 	{
-		//adjustWndSizeByMouseMove(event);
+		adjustWndSizeByMouseMove(event);
 	}
 }
 
@@ -330,7 +335,7 @@ void FluFrameLessWidget::mousePressEvent(QMouseEvent* event)
 	}
 
 	m_bMouseLeftBtnPress = true;
-	m_mouseLeftBtnPressPoint = event->pos();
+	m_mouseLeftBtnPressPoint = event->globalPos();
 	UpdateBorderArea(event->pos());
 	UpdateCursor();
 }
@@ -348,15 +353,11 @@ void FluFrameLessWidget::resizeEvent(QResizeEvent* event)
 void FluFrameLessWidget::slotClickMinBtn()
 {
 	showMinimized();
-	//m_borderArea = BorderArea::BorderAreaNone;
-	//m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }
 
 void FluFrameLessWidget::slotClickCloseBtn()
 {
 	close();
-	//m_borderArea = BorderArea::BorderAreaNone;
-	//m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }
 
 void FluFrameLessWidget::slotClickMaxNorBtn()
@@ -366,15 +367,10 @@ void FluFrameLessWidget::slotClickMaxNorBtn()
 		m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeMaximize)));
 		showNormal();
 	}
-	else if(isMinimized())
-	{
-		// todo
-	}
 	else
 	{
 		m_maxNorBtn->setIcon(QIcon(FluentUiIconUtils::GetFluentIcon(FluAwesomeType::ChromeRestore)));
+		m_borderArea = BorderArea::BorderAreaNone;
 		showMaximized();
 	}
-	//m_borderArea = BorderArea::BorderAreaNone;
-	//m_mouseLeftBtnPressPoint = QPoint(0, 0);
 }

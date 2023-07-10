@@ -47,7 +47,8 @@ void FluLinkCardWidget::mouseReleaseEvent(QMouseEvent* event)
 void FluLinkCardWidget::paintEvent(QPaintEvent* event)
 {
 	QStyleOption opt;
-	opt.init(this);
+	//opt.init(this);
+	opt.initFrom(this);
 	QPainter painter(this);
 	style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }

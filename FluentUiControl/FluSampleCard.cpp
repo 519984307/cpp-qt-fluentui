@@ -12,7 +12,7 @@ FluSampleCard::FluSampleCard(QWidget* parent /*= nullptr*/, QPixmap img /*= QPix
 	m_contentLabel = new QLabel(content);
 
 	m_vLayout = new QVBoxLayout();
-	m_hLayout = new QHBoxLayout();// layoutÒ»°ã²»Ö¸¶¨¸¸´°¿Ú
+	m_hLayout = new QHBoxLayout();// layoutä¸€èˆ¬ä¸æŒ‡å®šçˆ¶çª—å£
 	setLayout(m_hLayout);
 
 	m_titleLabel->setWordWrap(true);
@@ -37,12 +37,6 @@ FluSampleCard::FluSampleCard(QWidget* parent /*= nullptr*/, QPixmap img /*= QPix
 
 	m_titleLabel->setObjectName("titleLabel");
 	m_contentLabel->setObjectName("contentLabel");
-	//FluSetNameAndStypeSheet(FluSampleCard);
-	//setStyleSheet("FluSampleCard{border:1px solid black;}");
-
-	//QString qss = FluentUiStyleSheetUitls::getQssByFileName("../StyleSheet/FluSampleCard.qss");
-	//setStyleSheet(qss);
-	
 }
 
 void FluSampleCard::mouseReleaseEvent(QMouseEvent* event)
@@ -54,7 +48,7 @@ void FluSampleCard::mouseReleaseEvent(QMouseEvent* event)
 void FluSampleCard::paintEvent(QPaintEvent* event)
 {
 	QStyleOption opt;
-	opt.init(this);
+	opt.initFrom(this);
 	QPainter painter(this);
 	style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }

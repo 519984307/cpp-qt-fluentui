@@ -15,7 +15,7 @@ FluHomeInterface::FluHomeInterface(QWidget* parent /*= nullptr*/) : QScrollArea(
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setWidgetResizable(true);
 
-	m_vLayout->setContentsMargins(0, 0, 0, 36);
+//	m_vLayout->setContentsMargins(0, 0, 0, 36);
 	m_vLayout->setSpacing(40);
 	m_vLayout->addWidget(m_bannerWidget);
 	m_vLayout->setAlignment(Qt::AlignTop);
@@ -34,6 +34,13 @@ FluHomeInterface::FluHomeInterface(QWidget* parent /*= nullptr*/) : QScrollArea(
 	setWidget(m_view);
 	QString qss = FluentUiStyleSheetUitls::getQssByFileName("../StyleSheet/FluHomeInterface.qss");
 	setStyleSheet(qss);
+	/*setStyleSheet(R"(FluBannerWidget > #galleryLabel {
+    font: 42px 'Segoe UI', 'Microsoft YaHei';
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    padding-left: 28px;
+	})");*/
 }
 
 void FluHomeInterface::paintEvent(QPaintEvent* event)
@@ -41,6 +48,6 @@ void FluHomeInterface::paintEvent(QPaintEvent* event)
 	QScrollArea::paintEvent(event);
 	//QStyleOption opt;
 	//opt.init(this);
-	//QPainter painter(this);
+	//QPainter painter(viewport());
 	//style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }

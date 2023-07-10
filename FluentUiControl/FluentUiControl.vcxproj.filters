@@ -52,9 +52,6 @@
     <QtMoc Include="FluWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluSampleCard.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="FluSampleCardView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -71,6 +68,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluLinkCardWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluSampleCard.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

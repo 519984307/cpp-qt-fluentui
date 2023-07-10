@@ -33,7 +33,7 @@ void FluLinkCardView::addCard(QPixmap img, QString title, QString content, QStri
 void FluLinkCardView::paintEvent(QPaintEvent* event)
 {
 	QStyleOption opt;
-	opt.init(this);
-	QPainter painter(this);
+	opt.initFrom(this);
+	QPainter painter(viewport());
 	style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
