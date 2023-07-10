@@ -10,7 +10,6 @@
 class FluSampleCardView : public QWidget
 {
 	Q_OBJECT
-
 	FluSetPropertyP(QLabel, titleLabel);
 	FluSetPropertyP(QVBoxLayout, vLayout);
 	FluSetPropertyP(FluFlowLayout, flowLayout);

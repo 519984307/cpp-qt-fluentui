@@ -13,13 +13,12 @@ class FluHomeInterface : public QScrollArea
 {
 	Q_OBJECT
 
+public:
 	FluSetPropertyP(QWidget,view);
-//	FluSetPropertyP(QScrollArea, scrollArea);
 	FluSetPropertyP(QVBoxLayout, vLayout);
 	FluSetPropertyP(FluBannerWidget, bannerWidget);
 	FluSetPropertyP(FluSampleCardView, basicCardView);
 public:
-
 	FluHomeInterface(QWidget* parent = nullptr);
 
 protected:

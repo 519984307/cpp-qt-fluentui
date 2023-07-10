@@ -38,8 +38,9 @@ FluHomeInterface::FluHomeInterface(QWidget* parent /*= nullptr*/) : QScrollArea(
 
 void FluHomeInterface::paintEvent(QPaintEvent* event)
 {
-	QStyleOption opt;
-	opt.init(this);
-	QPainter painter(this);
-	style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+	QScrollArea::paintEvent(event);
+	//QStyleOption opt;
+	//opt.init(this);
+	//QPainter painter(this);
+	//style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }

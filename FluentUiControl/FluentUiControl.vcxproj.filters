@@ -38,9 +38,6 @@
     <ClInclude Include="FluImgWidget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FluLinkCardWidget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FluFlowLayout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -71,6 +68,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluLinkCardView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluLinkCardWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

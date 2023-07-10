@@ -22,7 +22,7 @@ FluBannerWidget::FluBannerWidget(QWidget* parent /*= nullptr*/) : QWidget(parent
 		"The latest FluentUI controls and styles for your applications.",
 		"https://github.com/mowangshuying/CppQtFluentUI");
 
-	setStyleSheet("border:none;");
+	//setStyleSheet("border:none;");
 }
 
 void FluBannerWidget::paintEvent(QPaintEvent* event)

@@ -107,7 +107,7 @@
     <QtMoc Include="FluHomeInterface.h" />
     <ClInclude Include="FluImgWidget.h" />
     <QtMoc Include="FluLinkCardView.h" />
-    <ClInclude Include="FluLinkCardWidget.h" />
+    <QtMoc Include="FluLinkCardWidget.h" />
     <QtMoc Include="FluMainWidget.h" />
     <QtMoc Include="FluSampleCardView.h" />
     <QtMoc Include="FluSampleCard.h" />

@@ -1,5 +1,9 @@
 #include "FluLinkCardWidget.h"
 #include <QDesktopServices>
+#include <QStyle>
+#include <QPainter>
+#include <QStyleOption>
+#include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
 
 FluLinkCardWidget::FluLinkCardWidget(QWidget* parent /*= nullptr*/, QPixmap img /*= QPixmap()*/, QString title /*= ""*/, QString content /*= ""*/, QString url/*= "" */)
 	: QWidget(parent)
@@ -28,11 +32,22 @@ FluLinkCardWidget::FluLinkCardWidget(QWidget* parent /*= nullptr*/, QPixmap img 
 	m_urlWidegt->setFixedSize(16, 16);
 	m_vLayout->setContentsMargins(15, 15, 15, 15);
 	m_urlWidegt->setGeometry(170, 190, 16, 16);
-	setStyleSheet("background-color:red;");
+	//setStyleSheet("background-color:red;");
+
+	m_titleLabel->setObjectName("titleLabel");
+	m_contentLabel->setObjectName("contentLabel");
 }
 
 void FluLinkCardWidget::mouseReleaseEvent(QMouseEvent* event)
 {
 	QWidget::mouseReleaseEvent(event);
 	QDesktopServices::openUrl(m_url);
+}
+
+void FluLinkCardWidget::paintEvent(QPaintEvent* event)
+{
+	QStyleOption opt;
+	opt.init(this);
+	QPainter painter(this);
+	style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }

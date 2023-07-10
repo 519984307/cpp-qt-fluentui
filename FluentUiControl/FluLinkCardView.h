@@ -14,5 +14,7 @@ class FluLinkCardView : public QScrollArea
 public:
 	FluLinkCardView(QWidget* parent = nullptr);
 	void addCard(QPixmap img, QString title, QString content, QString url);
+protected:
+	void paintEvent(QPaintEvent* event) override;
 };
 

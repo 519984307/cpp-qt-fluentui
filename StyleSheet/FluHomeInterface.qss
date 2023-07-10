@@ -1,18 +1,18 @@
-SettingInterface,
 #view {
     background-color: transparent;
-}
-
-FluBannerWidget > #galleryLabel {
-    font: 42px 'Segoe UI SemiBold', 'Microsoft YaHei SemiBold';
-    background-color: transparent;
-    color: black;
-    padding-left: 28px;
 }
 
 QScrollArea {
     border: none;
     background-color: transparent;
+}
+
+FluBannerWidget>#galleryLabel {
+    font: 42px 'Segoe UI', 'Microsoft YaHei';
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    padding-left: 28px;
 }
 
 QScrollBar {
@@ -23,12 +23,16 @@ QScrollBar {
     padding-right: 2px;
 }
 
+
 /*隐藏上箭头*/
+
 QScrollBar::sub-line {
     background: transparent;
 }
 
+
 /*隐藏下箭头*/
+
 QScrollBar::add-line {
     background: transparent;
 }
