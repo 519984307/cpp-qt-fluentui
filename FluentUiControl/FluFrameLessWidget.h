@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include "FluWidget.h"
 #include "FluentUiControlGlobal.h"
+#include "../FluentUiUtils/FluentUiLogUtils.h"
 
 class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public QWidget
 {
@@ -36,6 +37,12 @@ public:
 	QWidget* getCenterWidget()
 	{
 		return m_centerWidget;
+	}
+
+	void setMouseLeftBtnPressPoint(QPoint mouseLeftBtnPressPoint)
+	{
+		LogDebug << mouseLeftBtnPressPoint;
+		m_mouseLeftBtnPressPoint = mouseLeftBtnPressPoint;
 	}
 
 protected:

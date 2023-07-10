@@ -2,6 +2,7 @@
 #include "FluFrameLessWidget.h"
 #include "../FluentUiUtils/FluentUiIconUtils.h"
 #include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
+#include "../FluentUiUtils/FluentUiLogUtils.h"
 #include <QMouseEvent>
 
 FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
@@ -194,12 +195,13 @@ void FluFrameLessWidget::UpdateWindowByBorderArea()
 
 void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 {
+	LogDebug << "called!";
 	if (m_borderArea == BorderArea::BorderAreaRight)
 	{
 		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 		int wndW = width() + distancePoint.x();
 		setFixedWidth(wndW);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 	
@@ -214,7 +216,7 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int wndH = height();
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedWidth(wndW);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 	
@@ -230,7 +232,7 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedHeight(wndH);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 	
@@ -239,7 +241,7 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 		int wndH = height() + distancePoint.y();
 		setFixedHeight(wndH);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 	
@@ -255,7 +257,7 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 	
@@ -271,7 +273,7 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 	
@@ -286,7 +288,7 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int wndH = height() +distancePoint.y();
 		setGeometry(gWndX, gWndY, wndW, wndH);
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 	
@@ -296,7 +298,7 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int wndW = width() + distancePoint.x();
 		int wndH = height() + distancePoint.y();
 		setFixedSize(wndW, wndH);
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 }
@@ -319,7 +321,7 @@ void FluFrameLessWidget::mouseMoveEvent(QMouseEvent* event)
 		}
 
 		move(event->globalPos() - m_mouseLeftBtnPressPoint + pos());
-		m_mouseLeftBtnPressPoint = event->globalPos();
+		setMouseLeftBtnPressPoint(event->globalPos());
 	}
 	else
 	{
@@ -335,7 +337,7 @@ void FluFrameLessWidget::mousePressEvent(QMouseEvent* event)
 	}
 
 	m_bMouseLeftBtnPress = true;
-	m_mouseLeftBtnPressPoint = event->globalPos();
+	setMouseLeftBtnPressPoint(event->globalPos());
 	UpdateBorderArea(event->pos());
 	UpdateCursor();
 }
@@ -347,7 +349,7 @@ void FluFrameLessWidget::mouseReleaseEvent(QMouseEvent* event)
 
 void FluFrameLessWidget::resizeEvent(QResizeEvent* event)
 {
-
+	LogDebug << "size:" << event->size();
 }
 
 void FluFrameLessWidget::slotClickMinBtn()

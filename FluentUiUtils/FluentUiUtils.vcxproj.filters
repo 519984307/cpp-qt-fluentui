@@ -38,12 +38,18 @@
     <ClInclude Include="FluentUiStyleSheetUitls.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluentUiLogUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluentUiIconUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluentUiStyleSheetUitls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluentUiLogUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FluentUiLogUtils.cpp" />
     <ClInclude Include="FluentUiIconUtils.h" />
     <ClInclude Include="FluentUiStyleSheetUitls.h" />
     <ClInclude Include="FluentUiUtilsGlobal.h" />
@@ -93,6 +94,7 @@
     <ClCompile Include="FluentUiIconUtils.cpp" />
     <ClCompile Include="FluentUiStyleSheetUitls.cpp" />
     <ClCompile Include="FluentUiUtils.cpp" />
+    <ClInclude Include="FluentUiLogUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -32,7 +32,7 @@ FluSampleCardView::FluSampleCardView(QWidget* parent /*= nullptr*/, QString titl
 
 void FluSampleCardView::resizeEvent(QResizeEvent* event)
 {
-	qDebug() << __FUNCTION__ << __LINE__ << "width:" << width() << "height:" << height() << "\n";
+	//qDebug() << __FUNCTION__ << __LINE__ << "width:" << width() << "height:" << height() << "\n";
 }
 
 void FluSampleCardView::paintEvent(QPaintEvent* event)
