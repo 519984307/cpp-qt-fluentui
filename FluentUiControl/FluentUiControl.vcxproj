@@ -88,16 +88,18 @@
   <ItemGroup>
     <ClCompile Include="FluBannerWidget.cpp" />
     <ClCompile Include="FluFlowLayout.cpp" />
-    <ClCompile Include="FluFrameLessWidget.cpp" />
+    <ClCompile Include="FluFrameLessWidgetV1.cpp" />
     <ClCompile Include="FluHomeInterface.cpp" />
     <ClCompile Include="FluImgWidget.cpp" />
     <ClCompile Include="FluLabel.cpp" />
     <ClCompile Include="FluLinkCardView.cpp" />
     <ClCompile Include="FluLinkCardWidget.cpp" />
     <ClCompile Include="FluMainWidget.cpp" />
+    <ClCompile Include="FluNavigationInterface.cpp" />
     <ClCompile Include="FluSampleCard.cpp" />
     <ClCompile Include="FluSampleCardView.cpp" />
     <ClCompile Include="FluWidget.cpp" />
+    <QtMoc Include="FluNavigationInterface.h" />
     <QtMoc Include="FluSampleCard.h" />
     <QtMoc Include="FluBannerWidget.h" />
     <ClInclude Include="FluDef.h" />
@@ -113,7 +115,7 @@
     <QtMoc Include="FluSampleCardView.h" />
     <QtMoc Include="FluWidget.h" />
     <QtMoc Include="FluLabel.h" />
-    <QtMoc Include="FluFrameLessWidget.h" />
+    <QtMoc Include="FluFrameLessWidgetV1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

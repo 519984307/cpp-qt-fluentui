@@ -33,23 +33,6 @@ void FluBannerWidget::paintEvent(QPaintEvent* event)
 	painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 	painter.setPen(Qt::NoPen);
 
-	QPainterPath painterPath;
-	painterPath.setFillRule(Qt::WindingFill);
-
-	int  tmpW = width();
-	int tmpH = height();
-
-	painterPath.addRoundedRect(QRectF(0, 0, tmpW, tmpH), 10, 10);
-	painterPath.addRect(QRectF(0, tmpH - 50, 50, 50));
-	painterPath.addRect(QRectF(0, tmpH - 50, 50, 50));
-	painterPath.addRect(QRectF(tmpW - 50, 0, 50, 50));
-	painterPath.addRect(QRectF(tmpW - 50, tmpH - 50, 50, 50));
-
-	painterPath = painterPath.simplified();
-
-	painter.fillPath(painterPath, QColor(206, 216, 228));
-
-	QPixmap tmpPixmap = m_img.scaled(tmpW, tmpH);
-	painterPath.addRect(QRectF(0, tmpH, tmpW, height() - tmpH));
-	painter.fillPath(painterPath, QBrush(tmpPixmap));
+	m_img.scaled(rect().width(), rect().height());
+	painter.drawPixmap(rect(), m_img);
 }

@@ -1,11 +1,11 @@
 #include "FluDef.h"
-#include "FluFrameLessWidget.h"
+#include "FluFrameLessWidgetV1.h"
 #include "../FluentUiUtils/FluentUiIconUtils.h"
 #include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
 #include "../FluentUiUtils/FluentUiLogUtils.h"
 #include <QMouseEvent>
 
-FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
+FluFrameLessWidgetV1::FluFrameLessWidgetV1(QWidget *parent, QWidget* centerWidget)
 	: QWidget(parent)
 {
 	m_borderArea = BorderArea::BorderAreaNone;
@@ -67,12 +67,12 @@ FluFrameLessWidget::FluFrameLessWidget(QWidget *parent, QWidget* centerWidget)
 //	setAttribute(Qt::WA_Hover);
 }
 
-FluFrameLessWidget::~FluFrameLessWidget()
+FluFrameLessWidgetV1::~FluFrameLessWidgetV1()
 {
 
 }
 
-void FluFrameLessWidget::UpdateBorderArea(QPoint pos)
+void FluFrameLessWidgetV1::UpdateBorderArea(QPoint pos)
 {
 	m_borderArea = BorderArea::BorderAreaNone;
 	if (isMaximized())
@@ -134,7 +134,7 @@ void FluFrameLessWidget::UpdateBorderArea(QPoint pos)
 	}
 }
 
-void FluFrameLessWidget::UpdateCursor()
+void FluFrameLessWidgetV1::UpdateCursor()
 {
 	switch (m_borderArea)
 	{
@@ -165,7 +165,7 @@ void FluFrameLessWidget::UpdateCursor()
 	}
 }
 
-void FluFrameLessWidget::UpdateWindowByBorderArea()
+void FluFrameLessWidgetV1::UpdateWindowByBorderArea()
 {
 	switch (m_borderArea)
 	{
@@ -193,14 +193,17 @@ void FluFrameLessWidget::UpdateWindowByBorderArea()
 	}
 }
 
-void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
+void FluFrameLessWidgetV1::adjustWndSizeByMouseMove(QMouseEvent* event)
 {
-	LogDebug << "called!";
+	LogDebug << "BorderArea:" << (int)m_borderArea;
 	if (m_borderArea == BorderArea::BorderAreaRight)
 	{
 		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 		int wndW = width() + distancePoint.x();
-		setFixedWidth(wndW);
+		int wndH = height();
+		//setFixedWidth(wndW);
+		resize(wndW, wndH);
+		LogDebug  << "setFixedWidth:" << wndW;
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
@@ -214,8 +217,11 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int gWndY = pos().y();
 		int wndW = width() - distancePoint.x();
 		int wndH = height();
-		setGeometry(gWndX, gWndY, wndW, wndH);
-		setFixedWidth(wndW);
+		//setGeometry(gWndX, gWndY, wndW, wndH);
+		move(gWndX, gWndY);
+		//setFixedWidth(wndW);
+		resize(wndW, wndH);
+		LogDebug << geometry();
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
@@ -225,13 +231,21 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		QRect wndRect = rect();
 		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 
+		LogDebug << "distancePoint:" << distancePoint;
+
 		int gWndX = pos().x();
 		int gWndY = pos().y() + wndRect.y() + distancePoint.y();
 		int wndW = width();
 		int wndH = height() - distancePoint.y();
 
-		setGeometry(gWndX, gWndY, wndW, wndH);
-		setFixedHeight(wndH);
+		LogDebug << "wndW:" << wndW << ",wndH:" << wndH;
+		//setGeometry(gWndX, gWndY, wndW, wndH);
+		//setFixedSize(wndW, wndH);
+		//setFixedHeight(wndH);
+		move(gWndX, gWndY);
+		//setFixedHeight(wndH);
+		resize(wndW, wndH);
+		LogDebug << "BorderArea::BorderAreaTop After Set Geometry:" << geometry();
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
@@ -239,8 +253,11 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 	if (m_borderArea == BorderArea::BorderAreaBottom)
 	{
 		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
+		int wndW = width();
 		int wndH = height() + distancePoint.y();
-		setFixedHeight(wndH);
+	//	setFixedHeight(wndH);
+		resize(wndW, wndH);
+		LogDebug << geometry();
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
@@ -255,8 +272,11 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int wndW = width() - distancePoint.x();
 		int wndH = height() - distancePoint.y();
 
-		setGeometry(gWndX, gWndY, wndW, wndH);
-		setFixedSize(wndW, wndH);
+		//setGeometry(gWndX, gWndY, wndW, wndH);
+		move(gWndX, gWndY);
+	//	setFixedSize(wndW, wndH);
+		resize(wndW, wndH);
+		LogDebug << geometry();
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
@@ -271,8 +291,11 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int wndW = width() + distancePoint.x();
 		int wndH = height() - distancePoint.y();
 
-		setGeometry(gWndX, gWndY, wndW, wndH);
-		setFixedSize(wndW, wndH);
+		//setGeometry(gWndX, gWndY, wndW, wndH);
+		move(gWndX, gWndY);
+		//setFixedSize(wndW, wndH);
+		resize(wndW, wndH);
+		LogDebug << geometry();
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
@@ -286,8 +309,11 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		int gWndY = pos().y();
 		int wndW = width() - distancePoint.x();
 		int wndH = height() +distancePoint.y();
-		setGeometry(gWndX, gWndY, wndW, wndH);
-		setFixedSize(wndW, wndH);
+		//setGeometry(gWndX, gWndY, wndW, wndH);
+		move(gWndX, gWndY);
+		//setFixedSize(wndW, wndH);
+		resize(wndW, wndH);
+		LogDebug << "(" << wndW << ", " << wndH << ")" << "geometry:" << geometry();
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
@@ -297,13 +323,15 @@ void FluFrameLessWidget::adjustWndSizeByMouseMove(QMouseEvent* event)
 		QPoint distancePoint = event->globalPos() - m_mouseLeftBtnPressPoint;
 		int wndW = width() + distancePoint.x();
 		int wndH = height() + distancePoint.y();
-		setFixedSize(wndW, wndH);
+		//setFixedSize(wndW, wndH);
+		resize(wndW, wndH);
+		LogDebug << geometry();
 		setMouseLeftBtnPressPoint(event->globalPos());
 		return;
 	}
 }
 
-void FluFrameLessWidget::mouseMoveEvent(QMouseEvent* event)
+void FluFrameLessWidgetV1::mouseMoveEvent(QMouseEvent* event)
 {
 	if (!m_bMouseLeftBtnPress)
 	{
@@ -317,9 +345,33 @@ void FluFrameLessWidget::mouseMoveEvent(QMouseEvent* event)
 	{
 		if (isMaximized())
 		{
+			// 当前窗口是最大化的话，拖动鼠标确定鼠标位置
+			QSize tmpMaxSize = geometry().size();
+		//	move(geometry().x()+1,geometry().y()+1);
+
+			// 确定geometry().x()所在第几个屏幕
+			int nScreenIndex = geometry().x() / tmpMaxSize.width();
+			
+			int nScreenGlobalX = event->globalPos().x() % tmpMaxSize.width();
+			int nScreenGeometryX = geometry().x() % tmpMaxSize.width();
+
+			float tmpX = (nScreenGlobalX - nScreenGeometryX) * 1.0 / tmpMaxSize.width();
+			float tmpY = (event->globalPos().y() - geometry().y()) * 1.0 / geometry().height();
+
+			int realX = event->globalPos().x() - normalGeometry().width() * tmpX;
+			int realY = event->globalPos().y() + normalGeometry().height() * tmpY;
+		//	resize(normalGeometry().size());
+		//	move(realX, realY);
+		//	hide();
+			LogDebug << "realX:" << realX << "," << "realY:" << realY;
+			setGeometry(realX, realY, normalGeometry().size().width(), normalGeometry().height());
+		//	resize(normalGeometry().size());
+			setMouseLeftBtnPressPoint(event->globalPos());
+		//	show();
 			return;
 		}
 
+		LogDebug << "move to:" << event->globalPos() - m_mouseLeftBtnPressPoint + pos();
 		move(event->globalPos() - m_mouseLeftBtnPressPoint + pos());
 		setMouseLeftBtnPressPoint(event->globalPos());
 	}
@@ -329,7 +381,7 @@ void FluFrameLessWidget::mouseMoveEvent(QMouseEvent* event)
 	}
 }
 
-void FluFrameLessWidget::mousePressEvent(QMouseEvent* event)
+void FluFrameLessWidgetV1::mousePressEvent(QMouseEvent* event)
 {
 	if (event->button() != Qt::LeftButton)
 	{
@@ -342,27 +394,27 @@ void FluFrameLessWidget::mousePressEvent(QMouseEvent* event)
 	UpdateCursor();
 }
 
-void FluFrameLessWidget::mouseReleaseEvent(QMouseEvent* event)
+void FluFrameLessWidgetV1::mouseReleaseEvent(QMouseEvent* event)
 {
 	m_bMouseLeftBtnPress = false;
 }
 
-void FluFrameLessWidget::resizeEvent(QResizeEvent* event)
+void FluFrameLessWidgetV1::resizeEvent(QResizeEvent* event)
 {
 	LogDebug << "size:" << event->size();
 }
 
-void FluFrameLessWidget::slotClickMinBtn()
+void FluFrameLessWidgetV1::slotClickMinBtn()
 {
 	showMinimized();
 }
 
-void FluFrameLessWidget::slotClickCloseBtn()
+void FluFrameLessWidgetV1::slotClickCloseBtn()
 {
 	close();
 }
 
-void FluFrameLessWidget::slotClickMaxNorBtn()
+void FluFrameLessWidgetV1::slotClickMaxNorBtn()
 {
 	if (isMaximized())
 	{

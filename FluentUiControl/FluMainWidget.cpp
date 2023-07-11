@@ -6,7 +6,7 @@
 #include "FluHomeInterface.h"
 
 FluMainWidget::FluMainWidget(QWidget* parent /*= nullptr*/, QWidget* centerWidget /*= nullptr*/) 
-	: FluFrameLessWidget(parent, centerWidget)
+	: FluFrameLessWidgetV1(parent, centerWidget)
 {
 	m_hLayout = new QHBoxLayout();
 	m_centerWidget->setLayout(m_hLayout);
@@ -16,7 +16,7 @@ FluMainWidget::FluMainWidget(QWidget* parent /*= nullptr*/, QWidget* centerWidge
 	m_leftWidget->setFixedWidth(280);
 
 	m_leftVLayout->addWidget(m_leftWidget);
-	m_leftWidget->setStyleSheet("background-color:pink;");
+	//m_leftWidget->setStyleSheet("background-color:pink;");
 	m_hLayout->addLayout(m_leftVLayout);
 
 

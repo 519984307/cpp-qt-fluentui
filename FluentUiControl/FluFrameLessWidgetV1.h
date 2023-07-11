@@ -8,7 +8,7 @@
 #include "FluentUiControlGlobal.h"
 #include "../FluentUiUtils/FluentUiLogUtils.h"
 
-class FLUENTUICONTROL_EXPORT FluFrameLessWidget : public QWidget
+class FLUENTUICONTROL_EXPORT FluFrameLessWidgetV1 : public QWidget
 {
 	Q_OBJECT
 public:
@@ -25,8 +25,8 @@ public:
 		BorderAreaBottomRight,
 	};
 public:
-	FluFrameLessWidget(QWidget *parent = nullptr, QWidget* centerWidget = nullptr);
-	virtual ~FluFrameLessWidget();
+	FluFrameLessWidgetV1(QWidget *parent = nullptr, QWidget* centerWidget = nullptr);
+	virtual ~FluFrameLessWidgetV1();
 
 	void UpdateBorderArea(QPoint pos);
 	void UpdateCursor();

@@ -3,10 +3,10 @@
 #include "FluDef.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include "FluFrameLessWidget.h"
+#include "FluFrameLessWidgetV1.h"
 #include <QWidget>
 
-class FluMainWidget : public FluFrameLessWidget
+class FluMainWidget : public FluFrameLessWidgetV1
 {
 	Q_OBJECT
 
