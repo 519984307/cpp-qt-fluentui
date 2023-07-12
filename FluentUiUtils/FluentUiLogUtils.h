@@ -46,25 +46,25 @@ public:
              << "["                                                        \
              << "debug"                                                    \
              << "]"                                                        \
-             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "." << __FUNCTION__ << "." << __LINE__ << "] "
+             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
 #define LogInfo                                                            \
     qDebug().nospace() << "[" << FluentUiLogUtils::getTime().toStdString().c_str() << "]" \
              << "["                                                        \
              << "info"                                                     \
              << "]"                                                        \
-             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "." << __FUNCTION__ << "." << __LINE__ << "] "
+             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
 #define LogWarn                                                            \
     qDebug().nospace() << "[" << FluentUiLogUtils::getTime().toStdString().c_str() << "]" \
              << "["                                                        \
              << "warn"                                                     \
              << "]"                                                        \
-             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "." << __FUNCTION__ << "." << __LINE__ << "] "
+             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
 #define LogErr                                                             \
     qDebug().nospace() << "[" << FluentUiLogUtils::getTime().toStdString().c_str() << "]" \
              << "["                                                        \
              << "err"                                                      \
              << "]"                                                        \
-             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "." << __FUNCTION__ << "." << __LINE__ << "] "
+             << "[" << FluentUiLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "

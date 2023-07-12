@@ -17,7 +17,7 @@ FluLinkCardWidget::FluLinkCardWidget(QWidget* parent /*= nullptr*/, QPixmap img 
 	m_iconWidget = new FluImgWidget(this, img);
 	m_titleLabel = new QLabel(this);
 	m_contentLabel = new QLabel(this);
-	m_urlWidegt = new FluImgWidget(this, FluentUiIconUtils::GetFluentIcon(FluAwesomeType::Link));
+	m_urlWidegt = new FluImgWidget(this, FluentUiIconUtils::GetFluentIconPixmap(FluAwesomeType::Link));
 
 	m_vLayout->addWidget(m_iconWidget);
 	m_vLayout->addWidget(m_titleLabel);

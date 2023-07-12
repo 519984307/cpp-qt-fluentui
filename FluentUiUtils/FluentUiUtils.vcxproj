@@ -86,13 +86,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FluentUiColorSet.cpp" />
+    <ClCompile Include="FluentUiColorUtils.cpp" />
     <ClCompile Include="FluentUiLogUtils.cpp" />
+    <ClInclude Include="FluentUiColorUtils.h" />
+    <ClInclude Include="FluentUiColorSet.h" />
     <ClInclude Include="FluentUiIconUtils.h" />
     <ClInclude Include="FluentUiStyleSheetUitls.h" />
+    <QtMoc Include="FluentUiThemeUtils.h" />
     <ClInclude Include="FluentUiUtilsGlobal.h" />
     <ClInclude Include="FluentUiUtils.h" />
     <ClCompile Include="FluentUiIconUtils.cpp" />
     <ClCompile Include="FluentUiStyleSheetUitls.cpp" />
+    <ClCompile Include="FluentUiThemeUtils.cpp" />
     <ClCompile Include="FluentUiUtils.cpp" />
     <ClInclude Include="FluentUiLogUtils.h" />
   </ItemGroup>

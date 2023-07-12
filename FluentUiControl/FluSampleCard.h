@@ -12,7 +12,7 @@ class FluSampleCard : public QWidget
 {
 	Q_OBJECT
 
-		FluSetPropertyN(QString, routeKey);
+	FluSetPropertyN(QString, routeKey);
 	FluSetPropertyN(int, index);
 	FluSetPropertyP(FluImgWidget, imgWidget);
 	FluSetPropertyP(QLabel, titleLabel);

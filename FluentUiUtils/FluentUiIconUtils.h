@@ -2,6 +2,8 @@
 
 #include <QPixmap>
 #include <QFont>
+#include <QIcon>
+
 #include "../FluentUiControl/FluDef.h"
 
 class FluentUiIconUtils
@@ -12,7 +14,9 @@ private:
 
 public:
 	static FluentUiIconUtils* getInstance();
-	static QPixmap GetFluentIcon(FluAwesomeType nType);
+	static QPixmap GetFluentIconPixmap(FluAwesomeType nType);
+	static QIcon GetFluentIcon(FluAwesomeType nType);
+
 private:
 	QFont m_fluentFont;
 };

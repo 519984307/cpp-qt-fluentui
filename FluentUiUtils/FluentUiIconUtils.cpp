@@ -21,7 +21,7 @@ FluentUiIconUtils* FluentUiIconUtils::getInstance()
 	return &utils;
 }
 
-QPixmap FluentUiIconUtils::GetFluentIcon(FluAwesomeType nType)
+QPixmap FluentUiIconUtils::GetFluentIconPixmap(FluAwesomeType nType)
 {
 	QFont tmpFont = getInstance()->m_fluentFont;
 
@@ -38,4 +38,9 @@ QPixmap FluentUiIconUtils::GetFluentIcon(FluAwesomeType nType)
 	painter.end();
 
 	return tmpPixMap;
+}
+
+QIcon FluentUiIconUtils::GetFluentIcon(FluAwesomeType nType)
+{
+	return QIcon(GetFluentIconPixmap(nType));
 }
