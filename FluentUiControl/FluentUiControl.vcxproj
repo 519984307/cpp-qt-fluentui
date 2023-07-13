@@ -97,10 +97,14 @@
     <ClCompile Include="FluMainWidget.cpp" />
     <ClCompile Include="FluNavigationInterface.cpp" />
     <ClCompile Include="FluNavigationPushButton.cpp" />
+    <ClCompile Include="FluNavigationSeparator.cpp" />
+    <ClCompile Include="FluNavigationToolButton.cpp" />
     <ClCompile Include="FluNavigationWidget.cpp" />
     <ClCompile Include="FluSampleCard.cpp" />
     <ClCompile Include="FluSampleCardView.cpp" />
     <ClCompile Include="FluWidget.cpp" />
+    <ClInclude Include="FluNavigationSeparator.h" />
+    <QtMoc Include="FluNavigationToolButton.h" />
     <QtMoc Include="FluNavigationPushButton.h" />
     <QtMoc Include="FluNavigationWidget.h" />
     <QtMoc Include="FluNavigationInterface.h" />

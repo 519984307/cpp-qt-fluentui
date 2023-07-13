@@ -58,14 +58,14 @@ protected:
 
 		if (getSelected())
 		{
-			// »æÖÆ±³¾°
+			// ç»˜åˆ¶èƒŒæ™¯
 			painter.setBrush(normalCorlor);
 			if (getEnter())
 			{
 				painter.setBrush(enterColor);
 			}
 
-			// »æÖÆÊúÏß
+			// ç»˜åˆ¶ç«–çº¿
 			painter.drawRoundedRect(rect(), 5, 5);
 			painter.setBrush(m_themeColor);
 			painter.drawRoundedRect(0, 10, 3, 16, 1.5, 1.5);

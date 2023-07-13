@@ -41,6 +41,9 @@
     <ClInclude Include="FluFlowLayout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluNavigationSeparator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluFrameLessWidgetV1.h">
@@ -80,6 +83,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluNavigationPushButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationToolButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -127,6 +133,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluNavigationPushButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationToolButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationSeparator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
