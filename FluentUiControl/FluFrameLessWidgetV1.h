@@ -51,6 +51,7 @@ protected:
 	void mouseReleaseEvent(QMouseEvent* event) override;
 
 	void resizeEvent(QResizeEvent* event) override;
+	void moveEvent(QMoveEvent* event) override;
 public slots:
 	void slotClickMinBtn();
 	void slotClickCloseBtn();

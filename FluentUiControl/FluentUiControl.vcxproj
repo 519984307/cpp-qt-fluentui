@@ -96,9 +96,13 @@
     <ClCompile Include="FluLinkCardWidget.cpp" />
     <ClCompile Include="FluMainWidget.cpp" />
     <ClCompile Include="FluNavigationInterface.cpp" />
+    <ClCompile Include="FluNavigationPushButton.cpp" />
+    <ClCompile Include="FluNavigationWidget.cpp" />
     <ClCompile Include="FluSampleCard.cpp" />
     <ClCompile Include="FluSampleCardView.cpp" />
     <ClCompile Include="FluWidget.cpp" />
+    <QtMoc Include="FluNavigationPushButton.h" />
+    <QtMoc Include="FluNavigationWidget.h" />
     <QtMoc Include="FluNavigationInterface.h" />
     <QtMoc Include="FluSampleCard.h" />
     <QtMoc Include="FluBannerWidget.h" />

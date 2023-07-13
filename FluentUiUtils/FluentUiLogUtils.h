@@ -7,8 +7,8 @@
 #include <QMessageLogContext>
 #include <qlogging.h>
 
-// 日志格式统一规范
-// [时间] [等级] [文件名] [函数名] [行数] [内容]
+// 鏃ュ織鏍煎紡缁熶竴瑙勮寖
+// [鏃堕棿] [绛夌骇] [鏂囦欢鍚峕 [鍑芥暟鍚峕 [琛屾暟] [鍐呭]
 class FluentUiLogUtils
 {
 public:

@@ -3,6 +3,7 @@
 #include "../FluentUiUtils/FluentUiIconUtils.h"
 #include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
 #include "../FluentUiUtils/FluentUiLogUtils.h"
+#include <QThread>
 #include <QMouseEvent>
 
 FluFrameLessWidgetV1::FluFrameLessWidgetV1(QWidget *parent, QWidget* centerWidget)
@@ -340,16 +341,17 @@ void FluFrameLessWidgetV1::mouseMoveEvent(QMouseEvent* event)
 		return;
 	}
 
+	static bool bTemp = true;
 	//qDebug() << __FUNCTION__ << "border area  = " << (int)m_borderArea;
 	if (m_borderArea == BorderArea::BorderAreaNone)
 	{
 		if (isMaximized())
 		{
-			// µ±Ç°´°¿ÚÊÇ×î´ó»¯µÄ»°£¬ÍÏ¶¯Êó±êÈ·¶¨Êó±êÎ»ÖÃ
+			// å½“å‰çª—å£æ˜¯æœ€å¤§åŒ–çš„è¯ï¼Œæ‹–åŠ¨é¼ æ ‡ç¡®å®šé¼ æ ‡ä½ç½®
 			QSize tmpMaxSize = geometry().size();
 		//	move(geometry().x()+1,geometry().y()+1);
 
-			// È·¶¨geometry().x()ËùÔÚµÚ¼¸¸öÆÁÄ»
+			// ç¡®å®šgeometry().x()æ‰€åœ¨ç¬¬å‡ ä¸ªå±å¹•
 			int nScreenIndex = geometry().x() / tmpMaxSize.width();
 			
 			int nScreenGlobalX = event->globalPos().x() % tmpMaxSize.width();
@@ -360,14 +362,16 @@ void FluFrameLessWidgetV1::mouseMoveEvent(QMouseEvent* event)
 
 			int realX = event->globalPos().x() - normalGeometry().width() * tmpX;
 			int realY = event->globalPos().y() + normalGeometry().height() * tmpY;
-		//	resize(normalGeometry().size());
-		//	move(realX, realY);
-		//	hide();
+
 			LogDebug << "realX:" << realX << "," << "realY:" << realY;
+			setUpdatesEnabled(false);
+			setWindowState(Qt::WindowState::WindowNoState);
 			setGeometry(realX, realY, normalGeometry().size().width(), normalGeometry().height());
-		//	resize(normalGeometry().size());
 			setMouseLeftBtnPressPoint(event->globalPos());
-		//	show();
+
+			//repaint();
+			setUpdatesEnabled(true);
+
 			return;
 		}
 
@@ -402,6 +406,11 @@ void FluFrameLessWidgetV1::mouseReleaseEvent(QMouseEvent* event)
 void FluFrameLessWidgetV1::resizeEvent(QResizeEvent* event)
 {
 	LogDebug << "size:" << event->size();
+}
+
+void FluFrameLessWidgetV1::moveEvent(QMoveEvent* event)
+{
+	LogDebug << event->oldPos() << " => " << event->pos();
 }
 
 void FluFrameLessWidgetV1::slotClickMinBtn()
