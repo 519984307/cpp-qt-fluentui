@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5D0EDA31-F9F7-4F42-AAB9-A89D3AA491E3}</ProjectGuid>
+    <ProjectGuid>{CD3B4CC7-4B69-4CF9-855C-300F70ED7488}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
@@ -19,11 +19,11 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -36,8 +36,9 @@
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
-    <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtInstall>6.5.1_msvc2019_64</QtInstall>
+    <QtModules>
+    </QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -55,7 +56,6 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)\lib\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
@@ -65,7 +65,6 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>FLUENTUICONTROL_LIB;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -78,7 +77,6 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>FLUENTUICONTROL_LIB;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -86,52 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FluBannerWidget.cpp" />
-    <ClCompile Include="FluFlowLayout.cpp" />
-    <ClCompile Include="FluFrameLessWidgetV1.cpp" />
-    <ClCompile Include="FluHomeInterface.cpp" />
-    <ClCompile Include="FluImgWidget.cpp" />
-    <ClCompile Include="FluLabel.cpp" />
-    <ClCompile Include="FluLinkCardView.cpp" />
-    <ClCompile Include="FluLinkCardWidget.cpp" />
-    <ClCompile Include="FluMainWidget.cpp" />
-    <ClCompile Include="FluNavigationHistory.cpp" />
-    <ClCompile Include="FluNavigationInterface.cpp" />
-    <ClCompile Include="FluNavigationItemLayout.cpp" />
-    <ClCompile Include="FluNavigationPanel.cpp" />
-    <ClCompile Include="FluNavigationPushButton.cpp" />
-    <ClCompile Include="FluNavigationSeparator.cpp" />
-    <ClCompile Include="FluNavigationToolButton.cpp" />
-    <ClCompile Include="FluNavigationWidget.cpp" />
-    <ClCompile Include="FluPixmapLabel.cpp" />
-    <ClCompile Include="FluSampleCard.cpp" />
-    <ClCompile Include="FluSampleCardView.cpp" />
-    <ClCompile Include="FluWidget.cpp" />
-    <ClInclude Include="FluPixmapLabel.h" />
-    <QtMoc Include="FluNavigationItemLayout.h" />
-    <QtMoc Include="FluNavigationPanel.h" />
-    <ClInclude Include="FluNavigationHistory.h" />
-    <ClInclude Include="FluNavigationSeparator.h" />
-    <QtMoc Include="FluNavigationToolButton.h" />
-    <QtMoc Include="FluNavigationPushButton.h" />
-    <QtMoc Include="FluNavigationWidget.h" />
-    <QtMoc Include="FluNavigationInterface.h" />
-    <QtMoc Include="FluSampleCard.h" />
-    <QtMoc Include="FluBannerWidget.h" />
-    <ClInclude Include="FluDef.h" />
-    <ClInclude Include="FluentUiControlGlobal.h" />
-    <ClInclude Include="FluentUiControl.h" />
-    <ClCompile Include="FluentUiControl.cpp" />
-    <ClInclude Include="FluFlowLayout.h" />
-    <QtMoc Include="FluHomeInterface.h" />
-    <ClInclude Include="FluImgWidget.h" />
-    <QtMoc Include="FluLinkCardView.h" />
-    <QtMoc Include="FluLinkCardWidget.h" />
-    <QtMoc Include="FluMainWidget.h" />
-    <QtMoc Include="FluSampleCardView.h" />
-    <QtMoc Include="FluWidget.h" />
-    <QtMoc Include="FluLabel.h" />
-    <QtMoc Include="FluFrameLessWidgetV1.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

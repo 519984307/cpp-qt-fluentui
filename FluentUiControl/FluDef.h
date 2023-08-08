@@ -10,33 +10,29 @@
 #define FluSetNameAndStypeSheet(objectName)	FluSetObjectName(objectName);	\
 									FluSetStyleSheet(objectName);
 
-#define FluSetPropertyN(type, name)\
-    private:\
-        type m_##name;\
-    public:\
-    inline void set##name(type v) {\
-        m_##name = v;\
-    }\
-    inline type get##name() {\
-        return m_##name;\
-    }\
+#define FluSetPropertyN(type, name)					\
+    private:										\
+        type m_##name;								\
+    public:											\
+    inline void set##name(type v) {					\
+        m_##name = v;								\
+    }												\
+    inline type get##name() {						\
+        return m_##name;							\
+    }
 
-#define FluSetPropertyP(type, name)\
-    private:\
-        type* m_##name;\
-    public:\
-    inline void set##name(type* v) {\
-        m_##name = v;\
-    }\
-    inline type* get##name() {\
-        return m_##name;\
-    }\
-
+#define FluSetPropertyP(type, name)					\
+    private:										\
+        type* m_##name;								\
+    public:											\
+    inline void set##name(type* v) {				\
+        m_##name = v;								\
+    }												\
+    inline type* get##name() {						\
+        return m_##name;							\
+    }
 
 		
-
-
-
 enum class FluAwesomeType {
 	GlobalNavButton = 0xe700,
 	Wifi = 0xe701,

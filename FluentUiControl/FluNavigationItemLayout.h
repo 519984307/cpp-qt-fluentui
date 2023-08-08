@@ -8,6 +8,11 @@ class FluNavigationItemLayout : public QVBoxLayout
 {
 	Q_OBJECT
 public:
+	FluNavigationItemLayout(QWidget* parent = nullptr) : QVBoxLayout(parent)
+	{
+
+	}
+public:
 	void setGeometry(const QRect& rect)
 	{
 		QVBoxLayout::setGeometry(rect);

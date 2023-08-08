@@ -20,6 +20,11 @@ public:
 	}
 signals:
 	void signalClicked(bool bClicked);
+public:
+	void emitSignalClicked(bool bClicked)
+	{
+		emit signalClicked(bClicked);
+	}
 protected:
 	void enterEvent(QEvent* event)
 	{
@@ -46,7 +51,7 @@ protected:
 		update();
 		emit signalClicked(true);
 	}
-
+public:
 	void setCompacted(bool bCompacted)
 	{
 		if (m_bCompacted == bCompacted)
@@ -111,11 +116,6 @@ protected:
 	{
 		return m_bCompacted;
 	}
-
-	//void setCompacted(bool bCompacted)
-	//{
-	//	m_bCompacted = bCompacted;
-	//}
 private:
 	bool m_bCompacted;
 	bool m_bSelected;

@@ -12,10 +12,11 @@ FluSampleCard::FluSampleCard(QWidget* parent /*= nullptr*/, QPixmap img /*= QPix
 	m_contentLabel = new QLabel(content);
 
 	m_vLayout = new QVBoxLayout();
+	
 	m_hLayout = new QHBoxLayout();// layout一般不指定父窗口
-	setLayout(m_hLayout);
+	setLayout(m_hLayout);		  // 设置窗口为左右布局
 
-	m_titleLabel->setWordWrap(true);
+	m_titleLabel->setWordWrap(true);// 
 	m_contentLabel->setWordWrap(true);
 
 	m_imgWidget->setFixedSize(48, 48);
@@ -28,11 +29,11 @@ FluSampleCard::FluSampleCard(QWidget* parent /*= nullptr*/, QPixmap img /*= QPix
 	m_vLayout->setAlignment(Qt::AlignVCenter);
 	m_hLayout->setAlignment(Qt::AlignVCenter);
 
-	m_hLayout->addWidget(m_imgWidget);
+	m_hLayout->addWidget(m_imgWidget);	   // 设置窗口的图片左边
 	m_hLayout->addLayout(m_vLayout);
 	m_vLayout->addStretch(1);
-	m_vLayout->addWidget(m_titleLabel);
-	m_vLayout->addWidget(m_contentLabel);
+	m_vLayout->addWidget(m_titleLabel);	  // 右上部分：标题
+	m_vLayout->addWidget(m_contentLabel); // 右下部分:描述内容
 	m_vLayout->addStretch(1);
 
 	m_titleLabel->setObjectName("titleLabel");
@@ -47,6 +48,8 @@ void FluSampleCard::mouseReleaseEvent(QMouseEvent* event)
 
 void FluSampleCard::paintEvent(QPaintEvent* event)
 {
+	QWidget::paintEvent(event);
+
 	QStyleOption opt;
 	opt.initFrom(this);
 	QPainter painter(this);

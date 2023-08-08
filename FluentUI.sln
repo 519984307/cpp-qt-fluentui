@@ -16,6 +16,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluentUiExample", "FluentUi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluentUiUtils", "FluentUiUtils\FluentUiUtils.vcxproj", "{C2B3105F-32BE-49CE-B310-C3D5B4F37756}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluentUiDemo", "FluentUiDemo\FluentUiDemo.vcxproj", "{CD3B4CC7-4B69-4CF9-855C-300F70ED7488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -34,6 +36,10 @@ Global
 		{C2B3105F-32BE-49CE-B310-C3D5B4F37756}.Debug|x64.Build.0 = Debug|x64
 		{C2B3105F-32BE-49CE-B310-C3D5B4F37756}.Release|x64.ActiveCfg = Release|x64
 		{C2B3105F-32BE-49CE-B310-C3D5B4F37756}.Release|x64.Build.0 = Release|x64
+		{CD3B4CC7-4B69-4CF9-855C-300F70ED7488}.Debug|x64.ActiveCfg = Debug|x64
+		{CD3B4CC7-4B69-4CF9-855C-300F70ED7488}.Debug|x64.Build.0 = Debug|x64
+		{CD3B4CC7-4B69-4CF9-855C-300F70ED7488}.Release|x64.ActiveCfg = Release|x64
+		{CD3B4CC7-4B69-4CF9-855C-300F70ED7488}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
