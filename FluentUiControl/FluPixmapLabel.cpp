@@ -12,7 +12,7 @@ void FluPixmapLabel::setPixmap(QPixmap pixmap)
 	update();
 }
 
-QT_NAMESPACE::QPixmap FluPixmapLabel::getPixmap()
+QPixmap FluPixmapLabel::getPixmap()
 {
 	return m_pixmap;
 }

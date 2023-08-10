@@ -50,6 +50,9 @@
     <ClInclude Include="FluPixmapLabel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluTransparentToolButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluFrameLessWidgetV1.h">
@@ -163,6 +166,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluPixmapLabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluTransparentToolButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

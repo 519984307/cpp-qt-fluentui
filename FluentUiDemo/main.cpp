@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QWidget>
+#include "ButtonDemo.hpp"
 
 int main(int argc, char** argv)
 {
@@ -7,6 +8,9 @@ int main(int argc, char** argv)
 
 	//QWidget widget;
 	//widget.show();
+
+	ButtonDemo buttonDemo;
+	buttonDemo.show();
 
 	return app.exec();
 }

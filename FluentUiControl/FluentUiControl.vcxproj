@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FluTransparentToolButton.cpp" />
     <ClCompile Include="FluBannerWidget.cpp" />
     <ClCompile Include="FluFlowLayout.cpp" />
     <ClCompile Include="FluFrameLessWidgetV1.cpp" />
@@ -107,6 +108,7 @@
     <ClCompile Include="FluSampleCard.cpp" />
     <ClCompile Include="FluSampleCardView.cpp" />
     <ClCompile Include="FluWidget.cpp" />
+    <ClInclude Include="FluTransparentToolButton.h" />
     <ClInclude Include="FluPixmapLabel.h" />
     <QtMoc Include="FluNavigationItemLayout.h" />
     <QtMoc Include="FluNavigationPanel.h" />
