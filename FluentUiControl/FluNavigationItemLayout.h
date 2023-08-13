@@ -19,7 +19,7 @@ public:
 		for (int i = 0; i < count(); i++)
 		{
 			QLayoutItem* item = itemAt(i);
-			if (item->widget()->metaObject()->className() == "FluNavigationSeparator")
+			if (item->widget() && item->widget()->metaObject()->className() == "FluNavigationSeparator")
 			{
 				item->widget()->setGeometry(0, geometry().y(), geometry().width(), geometry().height());
 			}

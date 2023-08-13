@@ -4,6 +4,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include "FluFrameLessWidgetV1.h"
+#include "FluNavigationInterface.h"
 #include <QWidget>
 
 class FluMainWidget : public FluFrameLessWidgetV1
@@ -13,9 +14,11 @@ class FluMainWidget : public FluFrameLessWidgetV1
 public:
 	FluMainWidget(QWidget* parent = nullptr, QWidget* centerWidget = nullptr);
 
+	// 水平布局
 	QHBoxLayout *m_hLayout;
 
-	QWidget* m_leftWidget;
+	//QWidge* m_leftWidget;
+	FluNavigationInterface* m_navigationInterface;
 	QVBoxLayout* m_leftVLayout;
 
 	QWidget* m_rightTopWidget;
