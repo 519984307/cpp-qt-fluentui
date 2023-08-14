@@ -9,6 +9,7 @@
 #include "FluNavigationHistory.h"
 #include "FluNavigationToolButton.h"
 #include "../FluentUiUtils/FluentUiIconUtils.h"
+#include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
 
 
 enum class FluNavigationDisplayMode
@@ -85,7 +86,7 @@ public:
 		__initLayout();
 		__connect();
 
-		setStyleSheet("background-color:pink;");
+		//setStyleSheet("background-color:pink;");
 	}
 
 	void __initWidget(QWidget* parent, bool bMinimalEnable)
@@ -133,6 +134,11 @@ public:
 
 		setProperty("menu", false);
 		m_scrollWidget->setObjectName("scrollWidget");
+
+		//FluSetStyleSheet(FluNavigationPanel);
+
+		QString qss = FluentUiStyleSheetUitls::getQssByFileName("../StyleSheet/FluNavigationPanel.qss");
+		setStyleSheet(qss);
 	}
 
 	void __connect()
@@ -153,7 +159,7 @@ public:
 		m_vBottomLayout->setSpacing(4);
 
 		m_vLayout->addLayout(m_vTopLayout);
-		m_vLayout->addWidget(m_scrollWidget, 1);
+		m_vLayout->addWidget(m_scrollArea, 1);
 		m_vLayout->addLayout(m_vBottomLayout);
 
 		m_vLayout->setAlignment(Qt::AlignTop);
