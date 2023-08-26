@@ -5,6 +5,7 @@
 #include <QMouseEvent>
 #include <QEvent>
 
+
 class FluNavigationWidget : public QWidget
 {
 	Q_OBJECT
@@ -115,6 +116,26 @@ public:
 	bool getCompacted()
 	{
 		return m_bCompacted;
+	}
+
+	bool getSelectable()
+	{
+		return m_bSelectable;
+	}
+
+	void setSelectable(bool bSelectable)
+	{
+		m_bSelectable = bSelectable;
+	}
+
+	bool isRoot()
+	{
+		return true;
+	}
+
+	bool isLeaf()
+	{
+		return true;
 	}
 private:
 	bool m_bCompacted;

@@ -12,7 +12,7 @@ FluSampleCard::FluSampleCard(QWidget* parent /*= nullptr*/, QPixmap img /*= QPix
 	m_contentLabel = new QLabel(content);
 
 	m_vLayout = new QVBoxLayout();
-	
+
 	m_hLayout = new QHBoxLayout();// layout一般不指定父窗口
 	setLayout(m_hLayout);		  // 设置窗口为左右布局
 

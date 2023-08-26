@@ -10,8 +10,7 @@
 #include "FluNavigationToolButton.h"
 #include "../FluentUiUtils/FluentUiIconUtils.h"
 #include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
-
-
+ 
 enum class FluNavigationDisplayMode
 {
 	MINIMAL = 0,
@@ -170,6 +169,62 @@ public:
 	//	m_vTopLayout->addWidget(m_menuButton);
 	}
 
+	void insertWidget(int index, QString routeKey, FluNavigationWidget* widget, FluNavigationWidgetClickedCallBack onClicked, FluNavigationItemPosition postion, QString toolTip, QString parentRouteKey)
+	{
+		if (routeKey.isEmpty())
+			return;
+
+		auto itf = m_items.find(routeKey);
+		if (itf != m_items.end())
+			return;
+
+	}
+
+	void registerWidget(QString routeKey, QString parentRouteKey, FluNavigationWidget* widget, FluNavigationWidgetClickedCallBack onClicked, QString toopTip)
+	{
+		//connect(widget, &FluNavigationWidget::signalClicked, nullptr, &onClicked);
+		if (onClicked != nullptr)
+		{
+			
+		}
+	}
+
+	void onWidgetClicked()
+	{
+		FluNavigationWidget* widget = dynamic_cast<FluNavigationWidget*> (sender());
+		if (widget->getSelectable() == false)
+			return;
+
+		QString routeKey = widget->property("routeKey").toString();
+		setCurrentItem(routeKey);
+
+		
+		if (widget != m_menuButton && m_displayMode == FluNavigationDisplayMode::MENU && !widget->isLeaf())
+		{
+			collapse();
+		}
+	}
+
+	// 折叠
+	void collapse()
+	{
+
+	}
+
+
+
+	void setCurrentItem(QString routeKey)
+	{
+		if (routeKey.isEmpty())
+			return;
+
+		auto itf = m_items.find(routeKey);
+		if (itf == m_items.end())
+			return;
+
+		itf.value()->setSelectable(true);
+	}
+
 	void addWidget(QString routeKey, FluNavigationWidget* widget, FluNavigationWidgetClickedCallBack callback, FluNavigationItemPosition position = FluNavigationItemPosition::TOP)
 	{
 		auto itf = m_items.find(routeKey);
@@ -216,6 +271,11 @@ public:
 
 	}
 
+	void expand()
+	{
+
+	}
+
 	void removeWidget(QString routeKey)
 	{
 		auto itf = m_items.find(routeKey);
@@ -253,19 +313,21 @@ public:
 		m_expandWidth = width;
 		//
 	}
-
-	void expand()
-	{
-
-	}
 	
 private:
 	FluNavigationDisplayMode m_displayMode;
 	FluNavigationHistory* m_history;
+
+	/*
+	 * 窗口布局为垂直布局，内嵌三个垂直布局，分为上中下三个垂直布局：
+	 *		1. 上、下布局不带滚动。
+	 *		2.  中布局带滚动区域，可添加多个内容，内容无法放下，将自动添加滚动条。
+	*/
 	FluNavigationItemLayout* m_vBottomLayout;
 	FluNavigationItemLayout* m_vLayout;
 	FluNavigationItemLayout* m_vScrollLayout;
 	FluNavigationItemLayout* m_vTopLayout;
+
 	FluNavigationToolButton* m_menuButton;
 	FluNavigationToolButton* m_returnButton;
 	QMap<QString, FluNavigationWidget*> m_items;

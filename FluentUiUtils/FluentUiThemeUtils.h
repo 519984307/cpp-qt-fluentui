@@ -2,7 +2,8 @@
 
 #include <QObject>
 
-enum class FluentUiThemeUtilsDarkMode {
+enum class FluentUiThemeUtilsDarkMode 
+{
 	Light = 1,
 	Dark = 2
 };

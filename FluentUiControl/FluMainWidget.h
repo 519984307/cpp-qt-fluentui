@@ -6,6 +6,7 @@
 #include "FluFrameLessWidgetV1.h"
 #include "FluNavigationInterface.h"
 #include <QWidget>
+#include <QStackedLayout>
 
 class FluMainWidget : public FluFrameLessWidgetV1
 {
@@ -19,10 +20,11 @@ public:
 
 	//QWidge* m_leftWidget;
 	FluNavigationInterface* m_navigationInterface;
-	QVBoxLayout* m_leftVLayout;
+	//QVBoxLayout* m_leftVLayout;
 
-	QWidget* m_rightTopWidget;
-	QWidget* m_rightBottomWidget;
-	QVBoxLayout* m_rightVLayout;
+	//QWidget* m_rightTopWidget;
+	//QWidget* m_rightBottomWidget;
+	//QVBoxLayout* m_rightVLayout;
+	QStackedLayout* m_stackLayout;
 };
 

@@ -56,6 +56,9 @@
     <ClInclude Include="FluTheme.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluNavigationTreeWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluFrameLessWidgetV1.h">
@@ -104,6 +107,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluNavigationPanel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationAvatarWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationBaseTreeWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluCenterLabelWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -175,6 +187,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluTheme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationAvatarWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationBaseTreeWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationTreeWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCenterLabelWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -9,14 +9,15 @@ FluMainWidget::FluMainWidget(QWidget* parent /*= nullptr*/, QWidget* centerWidge
 	: FluFrameLessWidgetV1(parent, centerWidget)
 {
 	// 设置水平布局
-	m_hLayout = new QHBoxLayout();
+	m_hLayout = new QHBoxLayout(m_centerWidget);
 	m_centerWidget->setLayout(m_hLayout);
-	m_navigationInterface = new FluNavigationInterface(this, true, true);
 
+	m_stackLayout = new QStackedLayout(m_centerWidget);
+
+	m_navigationInterface = new FluNavigationInterface(m_centerWidget, true, true);
 	m_hLayout->addWidget(m_navigationInterface);
-	m_rightVLayout = new QVBoxLayout(centerWidget);
-	FluHomeInterface* homeInterFace = new FluHomeInterface(m_centerWidget);
-	m_rightVLayout->addWidget(homeInterFace);
+	m_hLayout->addLayout(m_stackLayout);
 
-	m_hLayout->addLayout(m_rightVLayout);
+	FluHomeInterface* homeInterFace = new FluHomeInterface(m_centerWidget);
+	m_stackLayout->addWidget(homeInterFace);
 }

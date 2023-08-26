@@ -9,7 +9,7 @@ QScrollArea {
 
 FluBannerWidget>#galleryLabel {
     font: 42px 'Segoe UI', 'Microsoft YaHei';
-    font-weight: bold;
+    /* font-weight: bold; */
     background-color: transparent;
     color: black;
     padding-left: 28px;
