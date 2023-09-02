@@ -17,15 +17,12 @@ public:
 		m_bPressed = false;
 		m_bEnter = false;
 		m_bSelectable = bSelectable;
+		m_treeWidget = nullptr;
+		m_nNodeDepth = 0;
 		setFixedSize(40, 36);
 	}
 signals:
 	void signalClicked(bool bClicked);
-public:
-	void emitSignalClicked(bool bClicked)
-	{
-		emit signalClicked(bClicked);
-	}
 protected:
 	void enterEvent(QEvent* event)
 	{
@@ -42,17 +39,23 @@ protected:
 
 	void mousePressEvent(QMouseEvent* event)
 	{
+		QWidget::mousePressEvent(event);
 		m_bPressed = true;
 		update();
 	}
 
 	void mouseReleaseEvent(QMouseEvent* event)
 	{
+		QWidget::mouseReleaseEvent(event);
 		m_bPressed = false;
 		update();
 		emit signalClicked(true);
 	}
 public:
+	void click()
+	{
+		emit signalClicked(true);
+	}
 	void setCompacted(bool bCompacted)
 	{
 		if (m_bCompacted == bCompacted)
@@ -143,5 +146,8 @@ private:
 	bool m_bPressed;
 	bool m_bEnter;
 	bool m_bSelectable;
+
+	FluNavigationWidget* m_treeWidget;
+	int m_nNodeDepth;
 };
 

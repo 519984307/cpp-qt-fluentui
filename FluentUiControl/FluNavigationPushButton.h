@@ -1,7 +1,9 @@
 #pragma once
 
 #include "FluNavigationWidget.h"
+#include "../FluentUiUtils/FluentUiThemeUtils.h"
 #include <QPainter>
+#include <QMargins>
 
 class FluNavigationPushButton : public FluNavigationWidget
 {
@@ -23,6 +25,7 @@ public:
 	void setText(QString text)
 	{
 		m_text = text;
+		update();
 	}
 
 	QPixmap getIcon()
@@ -33,19 +36,31 @@ public:
 	void setIcon(QPixmap icon)
 	{
 		m_icon = icon;
+		update();
 	}
+
+	QMargins _margins()
+	{
+		return QMargins(0, 0, 0, 0);
+	}
+
+	bool _canDrawIndicator()
+	{
+		return getSelected();
+	}
+
 protected:
 	void paintEvent(QPaintEvent* event) override
 	{
 		QPainter painter(this);
+		painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
+		painter.setPen(Qt::NoPen);
 
-		painter.setOpacity(0.4);
+		if(!getPressed())
+			painter.setOpacity(0.4);
 		if (getPressed())
-		{
 			painter.setOpacity(0.7);
-		}
 
-		
 		QColor normalCorlor = QColor(0, 0, 0, 6);
 		QColor enterColor = QColor(0, 0, 0, 10);
 		QColor fontColor = QColor(0, 0, 0);

@@ -317,17 +317,10 @@ public:
 private:
 	FluNavigationDisplayMode m_displayMode;
 	FluNavigationHistory* m_history;
-
-	/*
-	 * 窗口布局为垂直布局，内嵌三个垂直布局，分为上中下三个垂直布局：
-	 *		1. 上、下布局不带滚动。
-	 *		2.  中布局带滚动区域，可添加多个内容，内容无法放下，将自动添加滚动条。
-	*/
 	FluNavigationItemLayout* m_vBottomLayout;
 	FluNavigationItemLayout* m_vLayout;
 	FluNavigationItemLayout* m_vScrollLayout;
 	FluNavigationItemLayout* m_vTopLayout;
-
 	FluNavigationToolButton* m_menuButton;
 	FluNavigationToolButton* m_returnButton;
 	QMap<QString, FluNavigationWidget*> m_items;
@@ -335,6 +328,7 @@ private:
 	QScrollArea* m_scrollArea;
 	QWidget* m_parent;
 	QWidget* m_scrollWidget;
+
 	bool m_bCollapsible;
 	bool m_bMenuButtonVisible;
 	bool m_bMinimalEnabled;

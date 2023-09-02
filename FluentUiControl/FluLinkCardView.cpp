@@ -18,7 +18,6 @@ FluLinkCardView::FluLinkCardView(QWidget* parent /*= nullptr*/) : QScrollArea(pa
 	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	m_view->setObjectName("view");
-	//setStyleSheet("background-color:transparent;border:none;");
 
 	QString qss = FluentUiStyleSheetUitls::getQssByFileName("../StyleSheet/FluLinkCardView.qss");
 	setStyleSheet(qss);

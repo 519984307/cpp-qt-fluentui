@@ -14,9 +14,9 @@ class FluentUiThemeUtils : public QObject
 public:
 	FluentUiThemeUtils();
 
-	FluentUiThemeUtils* getInstance()
+	static FluentUiThemeUtils* getInstance()
 	{
-		FluentUiThemeUtils utils;
+		static FluentUiThemeUtils utils;
 		return &utils;
 	}
 public:
