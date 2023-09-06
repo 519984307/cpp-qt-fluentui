@@ -119,8 +119,8 @@
     <QtMoc Include="FluNavigationAvatarWidget.h" />
     <QtMoc Include="FluNavigationBaseTreeWidget.h" />
     <QtMoc Include="FluCenterLabelWidget.h" />
-    <ClInclude Include="FluNavigationTreeItem.h" />
-    <ClInclude Include="FluNavigationTreeWidget.h" />
+    <QtMoc Include="FluNavigationTreeItem.h" />
+    <QtMoc Include="FluNavigationTreeWidget.h" />
     <ClInclude Include="FluTheme.h" />
     <ClInclude Include="FluTransparentToolButton.h" />
     <ClInclude Include="FluPixmapLabel.h" />

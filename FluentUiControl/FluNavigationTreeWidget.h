@@ -8,6 +8,7 @@
 
 class FluNavigationTreeWidget : public FluNavigationBaseTreeWidget
 {
+	Q_OBJECT
 public:
 	FluNavigationTreeWidget(QWidget* parent, QPixmap icon, QString text, bool bSelectable)
 		: FluNavigationBaseTreeWidget(parent, bSelectable)
@@ -100,9 +101,10 @@ public slots:
 		}
 	}
 
-	void _onSize(QSize size)
+	void _onSize(QVariant size)
 	{
-		this->setFixedSize(size);
+		QSize tmpSize = size.toSize();
+		this->setFixedSize(tmpSize);
 	}
 private:
 	QPropertyAnimation* m_expandAni;
