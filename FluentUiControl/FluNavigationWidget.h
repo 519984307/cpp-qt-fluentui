@@ -17,7 +17,7 @@ public:
 		m_bPressed = false;
 		m_bEnter = false;
 		m_bSelectable = bSelectable;
-		m_treeWidget = nullptr;
+		m_treeParent = nullptr;
 		m_nNodeDepth = 0;
 		setFixedSize(40, 36);
 	}
@@ -52,6 +52,10 @@ protected:
 		emit signalClicked(true);
 	}
 public:
+	void emitSignalClicked(bool bClicked)
+	{
+		emit signalClicked(bClicked);
+	}
 	void click()
 	{
 		emit signalClicked(true);
@@ -140,6 +144,28 @@ public:
 	{
 		return true;
 	}
+
+	FluNavigationWidget* getTreeParent()
+	{
+		return m_treeParent;
+	}
+
+	void setTreeParent(FluNavigationWidget* treeParent)
+	{
+		m_treeParent = treeParent;
+	}
+
+	int getNodeDepth()
+	{
+		return m_nNodeDepth;
+	}
+
+	void setNodeDepth(int nNodeDepth)
+	{
+		m_nNodeDepth = nNodeDepth;
+	}
+
+
 private:
 	bool m_bCompacted;
 	bool m_bSelected;
@@ -147,7 +173,7 @@ private:
 	bool m_bEnter;
 	bool m_bSelectable;
 
-	FluNavigationWidget* m_treeWidget;
+	FluNavigationWidget* m_treeParent;
 	int m_nNodeDepth;
 };
 

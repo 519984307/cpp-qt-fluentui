@@ -6,6 +6,11 @@ class FluNavigationBaseTreeWidget : public FluNavigationWidget
 {
 	Q_OBJECT
 public:
+	FluNavigationBaseTreeWidget(QWidget* parent, bool bSelectable) : FluNavigationWidget(parent, bSelectable)
+	{
+
+	}
+public:
 	virtual void addChild() = 0;
 	virtual void insertChild(int index, FluNavigationWidget* widget) = 0;
 	virtual void removeChild(FluNavigationWidget* widget) = 0;

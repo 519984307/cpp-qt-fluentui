@@ -3,6 +3,7 @@
 #include "FluNavigationWidget.h"
 #include <QPaintEvent>
 #include <QPainter>
+#include "../FluentUiUtils/FluentUiThemeUtils.h"
 
 class FluNavigationSeparator : public FluNavigationWidget
 {
@@ -25,30 +26,31 @@ public:
 		update();
 	}
 
-	bool getDarkMode()
-	{
-		return m_bDarkMode;
-	}
+	//bool getDarkMode()
+	//{
+	//	return m_bDarkMode;
+	//}
 
-	void setDarkMode(bool bDarkMode)
-	{
-		m_bDarkMode = bDarkMode;
-	}
+	//void setDarkMode(bool bDarkMode)
+	//{
+	//	m_bDarkMode = bDarkMode;
+	//}
 protected:
 	void paintEvent(QPaintEvent* event)
 	{
 		QPainter painter(this);
 		QColor bgColor = QColor(0, 0, 0, 15);
-		if (m_bDarkMode)
+		if (FluentUiThemeUtils::getInstance()->getDarkMode() == FluentUiThemeUtilsDarkMode::Dark)
 		{
 			bgColor = QColor(255, 255, 255, 15);
 		}
+
 		QPen pen = QPen(bgColor);
-		pen.setCosmetic(true);
+		pen.setCosmetic(true); // 此处是否可以去掉
 		painter.setPen(pen);
 		painter.drawLine(0, 1, width(), 1);
 	}
 private:
-	bool m_bDarkMode;
+	//bool m_bDarkMode;
 };
 

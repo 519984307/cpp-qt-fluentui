@@ -61,17 +61,30 @@ protected:
 		if (getPressed())
 			painter.setOpacity(0.7);
 
-		QColor normalCorlor = QColor(0, 0, 0, 6);
-		QColor enterColor = QColor(0, 0, 0, 10);
-		QColor fontColor = QColor(0, 0, 0);
-		if (m_bDarkMode)
+		QColor normalCorlor;
+		QColor enterColor;
+		QColor fontColor;
+		QMargins tmpMargins = _margins();
+		int nMarginLeft = tmpMargins.left();
+		int nMarginRight = tmpMargins.right();
+		QRect globalRect = QRect(mapToGlobal(QPoint()), size());
+
+		if (FluentUiThemeUtils::getInstance()->getDarkMode() == FluentUiThemeUtilsDarkMode::Light)
+		{
+			normalCorlor = QColor(0, 0, 0, 6);
+			enterColor = QColor(0, 0, 0, 10);
+			fontColor = QColor(0, 0, 0);
+		}
+
+		if (FluentUiThemeUtils::getInstance()->getDarkMode() == FluentUiThemeUtilsDarkMode::Dark)
 		{
 			normalCorlor = QColor(255, 255, 255, 6);
 			enterColor = QColor(255, 255, 255, 10);
 			fontColor = QColor(255, 255, 255);
 		}
 
-		if (getSelected())
+		// 是否绘制指示器
+		if (_canDrawIndicator())
 		{
 			// 绘制背景
 			painter.setBrush(normalCorlor);
@@ -82,8 +95,10 @@ protected:
 
 			// 绘制竖线
 			painter.drawRoundedRect(rect(), 5, 5);
-			painter.setBrush(m_themeColor);
-			painter.drawRoundedRect(0, 10, 3, 16, 1.5, 1.5);
+			// 指示器暂时以蓝色为准
+			//painter.setBrush(m_themeColor);
+			painter.setBrush(Qt::blue);
+			painter.drawRoundedRect(0 + nMarginLeft, 10, 3, 16, 1.5, 1.5);
 		}
 
 		if (!getSelected() && getEnter() && isEnabled())
@@ -92,19 +107,22 @@ protected:
 			painter.drawRoundedRect(rect(), 5, 5);
 		}
 
-		painter.drawPixmap(QRect(11, 10, 16, 16), m_icon);
+		// 绘制icon
+		painter.drawPixmap(QRect(11 + nMarginLeft, 10, 16, 16), m_icon);
+
+		// 绘制提示信息
 		if (!getCompacted())
 		{
 			painter.setFont(FluNavigationPushButton::font());
 			painter.setPen(fontColor);
-			painter.drawText(QRect(44, 0, width() - 57, height()), Qt::AlignVCenter, getText());
+			painter.drawText(QRect(44 + nMarginLeft, 0, width() - 57 - (nMarginLeft + nMarginRight), height()), Qt::AlignVCenter, getText());
 		}
 	}
 
 private:
 	QPixmap m_icon;
 	QString m_text;
-	QColor m_themeColor;
-	bool m_bDarkMode;
+//	QColor m_themeColor;
+	//bool m_bDarkMode;
 };
 
