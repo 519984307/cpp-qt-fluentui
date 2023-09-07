@@ -14,7 +14,7 @@ CppQtFluentUI采用Vs2019+Qt5.12使用纯C++代码编写FluentUI.
 
 ## 3.参考
 
-...
+>github仓库: [zhiyiYo/PyQt-Fluent-Widgets: A fluent design widgets library based on PyQt/PySide. Make Qt Great Again. (github.com)](https://github.com/zhiyiYo/PyQt-Fluent-Widgets)
 
 ## 4.许可
 
