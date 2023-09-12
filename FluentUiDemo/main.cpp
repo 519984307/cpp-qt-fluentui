@@ -1,7 +1,9 @@
 #include <QApplication>
 #include <QWidget>
-#include "ButtonDemo.hpp"
+#include "ButtonDemo.h"
 #include "../FluentUiControl/FluCenterLabelWidget.h"
+#include "../FluentUiUtils/FluentUiLogUtils.h"
+#include "ApiTest_QCursor.h"
 
 int main(int argc, char** argv)
 {
@@ -13,8 +15,15 @@ int main(int argc, char** argv)
 	//ButtonDemo buttonDemo;
 	//buttonDemo.show();
 
-	FluCenterLabelWidget widget(nullptr, "TempText");
-	widget.show();
+	FluentUiLogUtils::init();
+
+	//FluCenterLabelWidget widget(nullptr, "TempText");
+	//widget.show();
+
+	ApiTest_QCursor apiTest_Qcursor;
+	apiTest_Qcursor.show();
+
+
 
 	return app.exec();
 }

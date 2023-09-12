@@ -56,6 +56,9 @@
     <ClInclude Include="FluTheme.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluToolTip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluFrameLessWidgetV1.h">
@@ -205,6 +208,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluNavigationTreeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluToolTip.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

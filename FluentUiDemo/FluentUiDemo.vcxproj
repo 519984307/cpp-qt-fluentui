@@ -234,11 +234,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtMoc Include="ButtonDemo.hpp" />
+    <ClCompile Include="ApiTest_QCursor.cpp" />
+    <ClCompile Include="NavigationDemo.cpp" />
+    <QtMoc Include="ButtonDemo.h" />
+    <ClCompile Include="ButtonDemo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NavigationDemo.hpp" />
+    <ClInclude Include="ApiTest_QCursor.h" />
+    <ClInclude Include="NavigationDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
