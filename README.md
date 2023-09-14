@@ -22,4 +22,4 @@ CppQtFluentUI采用Vs2019+Qt5.12使用纯C++代码编写FluentUI.
 
 ## 5.历史
 
-...
+[![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/cpp-qt-fluentui&type=Date)
