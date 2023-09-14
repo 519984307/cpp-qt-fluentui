@@ -35,6 +35,9 @@
     <ClCompile Include="ApiTest_QCursor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluToolTipDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ButtonDemo.h">
@@ -46,6 +49,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ApiTest_QCursor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluToolTipDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

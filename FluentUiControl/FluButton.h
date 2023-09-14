@@ -6,9 +6,11 @@
 #include <QPainter>
 #include <QPaintEvent>
 #include <QMouseEvent>
+#include "../FluentUiUtils/FluentUiStyleSheetUitls.h"
 
 class FluPushButton : public QPushButton
 {
+	//Q_OBJECT
 public:
 	FluPushButton(QWidget* parent) : QPushButton(parent)
 	{
@@ -19,7 +21,10 @@ public:
 
 		setFont();
 
-		_postInit();
+		//_postInit();
+
+		QString qss = FluentUiStyleSheetUitls::getQssByFileName("../StyleSheet/FluPushButton.qss");
+		setStyleSheet(qss);
 	}
 
 	FluPushButton(QString text, QWidget* parent = nullptr, QIcon icon = QIcon())
@@ -29,10 +34,10 @@ public:
 		setIcon(icon);
 	}
 
-	void _postInit()
-	{
+	//void _postInit()
+	//{
 
-	}
+	//}
 
 	void setIcon(QIcon icon)
 	{
@@ -55,7 +60,7 @@ public:
 	QFont getFont(int fontSize = 14, QFont::Weight weight = QFont::Normal)
 	{
 		QFont font;
-		font.setFamilies({ "Segoe UI", "Microsoft YaHei"});
+		font.setFamilies({ "Segoe UI", "Microsoft YaHei" });
 		font.setPixelSize(fontSize);
 		font.setWeight(weight);
 		return font;
@@ -87,6 +92,7 @@ public:
 
 	void paintEvent(QPaintEvent* event)
 	{
+		QPushButton::paintEvent(event);
 		if (m_icon.isNull())
 			return;
 

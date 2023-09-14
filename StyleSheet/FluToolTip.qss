@@ -2,13 +2,13 @@ FluToolTip {
     border-radius: 4px;
 }
 
-FluToolTip>#container {
-    border: 1px solid rgba(0, 0, 0, 0.06);
+#container {
+    border: 1px solid rgba(255, 0, 0, 0.06);
     background-color: rgb(243, 243, 243);
     border-radius: 4px;
 }
 
-QLabel {
+#contentLabel {
     background-color: transparent;
     font: 12px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
     border: none;

@@ -235,6 +235,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ApiTest_QCursor.cpp" />
+    <ClCompile Include="FluToolTipDemo.cpp" />
     <ClCompile Include="NavigationDemo.cpp" />
     <QtMoc Include="ButtonDemo.h" />
     <ClCompile Include="ButtonDemo.cpp" />
@@ -242,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApiTest_QCursor.h" />
+    <QtMoc Include="FluToolTipDemo.h" />
     <ClInclude Include="NavigationDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
