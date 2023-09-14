@@ -64,7 +64,7 @@ private:
 	QLabel* m_label;
 
 	// 窗口总布局
-	QHBoxLayout *m_hMainLayout;
+	QHBoxLayout* m_hMainLayout;
 	QHBoxLayout* m_hContainerLayout;
 
 	QPropertyAnimation* m_opcityAni;
@@ -138,9 +138,6 @@ public:
 class FluToolTipFilter : public QObject
 {
 public:
-	// parent: the widget to install tool tip
-	// show tool tip after how long the mouse hovers in milliseconds
-	// where to show the tooltip
 	FluToolTipFilter(QWidget* parent = nullptr, int showDelay = 300, FluToolTipPositon position = FluToolTipPositon::TOP);
 
 	bool eventFilter(QObject* object, QEvent* event);
